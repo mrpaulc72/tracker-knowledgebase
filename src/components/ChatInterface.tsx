@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -15,15 +15,97 @@ interface Message {
     sources?: string[];
 }
 
+const QUICK_ACTIONS = [
+    {
+        label: "SAFE Core Capabilities",
+        question: "What are the core capabilities of the SAFE platform?",
+        icon: ShieldCheck,
+        color: "text-tracker-blue"
+    },
+    {
+        label: "Digital Evidence Management",
+        question: "How does SAFE handle digital evidence management?",
+        icon: Zap,
+        color: "text-tracker-gold"
+    },
+    {
+        label: "Customer Avatars (ICAs)",
+        question: "Describe the 'Evidence Room Manager' customer avatar and their pain points.",
+        icon: User,
+        color: "text-tracker-red"
+    },
+    {
+        label: "Case Study: Bowling Green PD",
+        question: "What were the key results for Bowling Green PD after adopting SAFE?",
+        icon: BookOpen,
+        color: "text-tracker-navy"
+    },
+    {
+        label: "Auto-Disposition",
+        question: "How does the auto-disposition feature work in SAFE?",
+        icon: Zap,
+        color: "text-tracker-blue"
+    },
+    {
+        label: "Chain of Custody",
+        question: "Explain how SAFE maintains chain of custody security.",
+        icon: ShieldCheck,
+        color: "text-tracker-gold"
+    },
+    {
+        label: "Task Force Management",
+        question: "How does SAFE support multi-agency task forces?",
+        icon: User,
+        color: "text-tracker-red"
+    },
+    {
+        label: "Pricing & ROI",
+        question: "What are the standard pricing models for SAFE?",
+        icon: BookOpen,
+        color: "text-tracker-navy"
+    },
+    {
+        label: "Legacy Data Migration",
+        question: "What is the process for migrating data from a legacy system to SAFE?",
+        icon: ShieldCheck,
+        color: "text-tracker-blue"
+    },
+    {
+        label: "Mobile Capabilities",
+        question: "What features are available on the SAFE mobile app?",
+        icon: Zap,
+        color: "text-tracker-gold"
+    }
+];
+
 export default function ChatInterface() {
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [quickActions, setQuickActions] = useState<typeof QUICK_ACTIONS>([]);
 
-    const handleSend = async () => {
-        if (!input.trim() || isLoading) return;
+    useEffect(() => {
+        // Randomly select 4 actions on mount
+        const shuffled = [...QUICK_ACTIONS].sort(() => 0.5 - Math.random());
+        setQuickActions(shuffled.slice(0, 4));
+    }, []);
 
-        const userMessage: Message = { role: 'user', content: input };
+    const handleQuickAction = (question: string) => {
+        setInput(question);
+        // We use a timeout to allow the state update to settle before "sending"
+        // But since handleSend reads from state 'input' which might not be updated yet in this closure,
+        // we'll pass the message directly to a modified sending logic or just auto-submit via effect.
+        // Easier approach: just call the API logic directly or queue it.
+        // Actually, let's just modify the state and let the user click send, OR pass the text to handleSend.
+        // The user requested "it should actually provide the information", implying auto-send.
+        // Let's refactor handleSend to accept an optional message.
+        submitMessage(question);
+    };
+
+    const submitMessage = async (messageText: string) => {
+        if (!messageText.trim() || isLoading) return;
+
+        const userMessage: Message = { role: 'user', content: messageText };
         setMessages((prev) => [...prev, userMessage]);
         setInput('');
         setIsLoading(true);
@@ -45,6 +127,10 @@ export default function ChatInterface() {
         } finally {
             setIsLoading(false);
         }
+    };
+
+    const handleSend = async () => {
+        await submitMessage(input);
     };
 
     return (
@@ -77,22 +163,17 @@ export default function ChatInterface() {
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-md">
-                                    <Button variant="outline" className="justify-start gap-2 h-auto py-3 px-4 border-tracker-navy/10 hover:bg-tracker-navy/5" onClick={() => setInput("What are the core capabilities of the SAFE platform?")}>
-                                        <ShieldCheck className="w-4 h-4 text-tracker-blue" />
-                                        <span className="text-xs text-left">SAFE Core Capabilities</span>
-                                    </Button>
-                                    <Button variant="outline" className="justify-start gap-2 h-auto py-3 px-4 border-tracker-navy/10 hover:bg-tracker-navy/5" onClick={() => setInput("How does SAFE handle digital evidence?")}>
-                                        <Zap className="w-4 h-4 text-tracker-gold" />
-                                        <span className="text-xs text-left">Digital Evidence Management</span>
-                                    </Button>
-                                    <Button variant="outline" className="justify-start gap-2 h-auto py-3 px-4 border-tracker-navy/10 hover:bg-tracker-navy/5" onClick={() => setInput("Tell me about the Evidence Room Manager avatar.")}>
-                                        <User className="w-4 h-4 text-tracker-red" />
-                                        <span className="text-xs text-left">Customer Avatars (ICAs)</span>
-                                    </Button>
-                                    <Button variant="outline" className="justify-start gap-2 h-auto py-3 px-4 border-tracker-navy/10 hover:bg-tracker-navy/5" onClick={() => setInput("What was the result for Bowling Green PD?")}>
-                                        <BookOpen className="w-4 h-4 text-tracker-navy" />
-                                        <span className="text-xs text-left">Case Study: Bowling Green PD</span>
-                                    </Button>
+                                    {quickActions.map((action, idx) => (
+                                        <Button
+                                            key={idx}
+                                            variant="outline"
+                                            className="justify-start gap-2 h-auto py-3 px-4 border-tracker-navy/10 hover:bg-tracker-navy/5"
+                                            onClick={() => handleQuickAction(action.question)}
+                                        >
+                                            <action.icon className={cn("w-4 h-4", action.color)} />
+                                            <span className="text-xs text-left">{action.label}</span>
+                                        </Button>
+                                    ))}
                                 </div>
                             </div>
                         )}
