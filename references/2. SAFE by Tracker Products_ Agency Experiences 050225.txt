@@ -1,0 +1,974 @@
+﻿SAFE by Tracker Products: Agency Experiences
+Apple Valley Police Department
+* James Gummert, Detective Sergeant: "Before we had SAFE, our evidence management system was archaic; it was like Atari versus Xbox." "We needed to upgrade for the future… which is now. Tracker Products' SAFE software fits our needs in 2020." "Now we can easily enter the property and evidence, track it, and run more in-depth reports." "With an effective system, we can get a better picture of what we have on a daily basis." "Trust me, agencies talk." "I'll tell them that we chose Tracker Products because it's an excellent system, and the customer service is over-the-top!" "Beth has been a huge game-changer, as far as I'm concerned." "To me, the process moved along quickly, efficiently and effectively."
+
+* Tracker's SAFE software fit the needs of the Apple Valley Police Department in 2020.
+
+* With the Apple Valley Police Department's use of SAFE, they can easily enter property and evidence, track it, and run more in-depth reports. This includes the ability to narrow research for specific case types such as sex assault kits, robbery cases, drug or murder cases. An effective system allows a better picture of what they have on a daily basis.
+
+* The kickoff call for implementing SAFE at Apple Valley Police Department was in mid-September, and they went live in mid-January. The first step was an initial review of the data. There was another call to discuss data organization, which involved translations and mapping. A trial import was then conducted. Training on the software took a few weeks, followed by training for the rest of the officers and staff. The process moved along quickly, efficiently, and effectively.
+
+* The Apple Valley Police Department's decision to go with Tracker Products' SAFE software was driven by their previous "archaic" evidence management system, described as "Atari versus Xbox". They needed to upgrade for the future.
+
+* The implementation process at Apple Valley Police Department involved a kickoff call in mid-September, data review, data organization discussions (including translations and mapping by Beth), a trial import, weeks of training on the software, and subsequent training for officers and staff, and was described as moving along quickly, efficiently, and effectively. Beth was considered a "huge game-changer".
+
+Berkeley County Sheriff's Office
+   * Willie from Berkeley County Sheriff's Office: "We didn't have any evidence in this new facility, which was a luxury." "In my old system – which was not Tracker – I had never done an audit." "If somebody asked for property, I'd just better be able to find it. That was our previous way to do an inventory." (On discrepancy reports) "Number one, I've been doing this for at least a decade and I've done discrepancy reports and audits all the time, and I've yet to get an audit that was perfect. I don't care how good you are, there are errors. And the other thing everybody needs to hear is… I've made errors. No one's perfect." "But here's what's really different with our department. You do those reports, you log them in, and it shows that you are actively looking for errors and you're actively trying to correct them." "And we take advantage of the notes section in your software." "Now, we don't just say we found the problem, we actually put the details in there." "So, if somebody wants to review the audit report, they can see what we've done." "It was a lot of hard work, but we're pretty proud of it. Anybody is welcome to stop by. Just ask for me; we'll give you a tour." "I highly recommend that evidence custodians visit other evidence rooms in the area because it gives you great ideas."
+
+   * Ben (presumably from Tracker Products): "If you are able to take all of your data from one system and bring it into another… even if it's not the cleanest stuff in the world, it's going to save you time." "In your case [Berkeley County], you guys spent two to three months manually entering all that data into the system. That's a significant amount of time and effort, but the good part of that is… all the evidence that is entered, is good, clean evidence. It forces it to be clean at that point." (On the evidence tech who thought his room was perfect) "I've gone through everything. It's all there." (On showing the discrepancy report) "He couldn't believe it. He was so excited that he wanted to bring in his commanding officer to say, I want to show you that my work is perfect." "Are you sure you don't want to run these reports before you bring in the commanding officer?" "He's like, Oh no, my work is absolutely dead on." "I feel confident that I could come in, look for items, and there's a very high probability that all of the evidence will be easy to find." (On reports in the current system) "you cannot go in and delete these reports or manipulate or modify them in any way. I mean, it's a record of what actually happened." "We just picked up a new client – it's the largest one we've ever picked up… Baltimore." "You've got 8,000. Can you imagine?" (On the Baltimore project) "It's a REALLY large implementation." (On cleaning up) "mimic that process of moving evidence from what I call dirty shelving into clean shelving. That's certainly a way that you can begin to segment your evidence from dirty to clean."
+
+   * At the Berkeley County Sheriff's Office, a Sergeant spent eight hours a day for almost three months managing evidence in a new facility. They probably had about 3000 pieces of evidence at that time. Each piece was moved and verified as it was put into the system.
+
+   * Manually entering data from one system to another, even if the data is not clean, takes significant time and effort. However, when evidence is manually entered, it is forced to be "good, clean evidence".
+
+   * In their old system (not Tracker), Berkeley County had never done an audit. The previous method for inventory was finding property when requested.
+
+   * Berkeley County Sheriff's Office now has an auditing process in place. They look at their discrepancy reports every month.
+
+   * Even with discrepancy reports and audits done "all the time" over at least a decade, a perfect audit has not been achieved; there are errors. Doing these reports and logging them shows active effort in looking for and correcting errors.
+
+   * The notes section in the software is utilized by Berkeley County Sheriff's Office to put details about problems found, allowing someone reviewing the audit report to see what was done.
+
+   * In their old Legacy system, reports were not stored in the same way they are now. In the current system, these reports cannot be deleted, manipulated, or modified; it is a record of what actually happened.
+
+   * Evidence custodians are highly recommended to visit other evidence rooms in the area to get great ideas.
+
+   * Tracker Products recently picked up Baltimore as a new client, which is the largest one they've ever picked up. For Baltimore, they are importing data from 2.7 million records. They are moving 55 million chain of custody entries from the old Legacy system to SAFE. This is compared to Berkeley County's 8,000 pieces of evidence.
+
+   * Baltimore has about 10 people that work in their evidence room. This is a REALLY large implementation.
+
+   * No matter the size of an operation, converting systems involves a process. Mimicking the process of moving evidence from "dirty shelving" into "clean shelving" can help segment evidence during cleanup.
+
+   * The Berkeley County Sheriff's Office moved into a new facility and spent two to three months manually entering approximately 3000 pieces of evidence into their system with a Sergeant working full time on this task. This process, while time-consuming, ensured the data entered was clean.
+
+   * Willie from Berkeley County Sheriff's Office shared that in his old system (not Tracker), he never did audits and relied solely on being able to find property when asked.
+
+   * Ben recounted an anecdote about an evidence tech in Minnesota who was certain his evidence room was perfect but was unaware of discrepancy reports; showing him the feature led to excitement about proving his work was "absolutely dead on".
+
+   * Willie stated that despite doing discrepancy reports and audits for a decade, he has never had a perfect audit and has made errors, highlighting the importance of actively looking for and correcting mistakes as they now do.
+
+   * Berkeley County Sheriff's Office is currently importing data from 2.7 million records and moving 55 million chain of custody entries for their largest client, Baltimore, which is a "REALLY large implementation" compared to their own 8,000 pieces of evidence.
+
+Bowling Green Police Department
+      * David from Bowling Green: (On the old system) "Particularly how terrible it was to manage our evidence based on our old evidence module." (On the report) "It goes to my immediate boss… and it makes its way up to the chain to the Chief. The reason we send this out is so that we can make projections… So, it'll make its way up to the Chief, and it holds the department – and maybe leadership specifically – accountable for the state of the evidence room." (On evidence being 'outta sight, outta mind') "By the nature of the operation within a department, evidence is sort of outta sight, outta mind. It's a secure area. People can't freely come and go. So they don't have a picture of what you're looking at. And this reveals the state of your evidence room." "You can't ignore it. Or, if a department does choose to ignore it, and something goes horribly wrong, then you've got this report indicating that year after year, this was presented." (On the flowchart) "No. It's pretty self-explanatory if you just follow it. And you can modify it to fit your agency." (On agency support) "Our agency has been very supportive of our evidence operation. Without that, we wouldn't be sitting as well as we currently are. Don't get me wrong, we have room for improvement ourselves." (On the report content) "It's mostly graphs and a little bit of commentary. If it's too much, nobody's gonna read it. So, you keep it short. Your graphs are the telltale sign of the status of your evidence management unit. They may look at that and not read the commentary along with it." (On his personality) "I have developed a reputation… for having a little bit of OCD… I like order. I like neatness. So that's part of my character… I'm more of an organized person. So, having that attribute probably helps a little bit in inventory management." (On the old system) "On day one, I told my boss, The old system has to go. He was in agreement along with everyone else, all the way up to the Chief." (On benchmarking) "I basically set up a real-world scenario where we would make up fake evidence. We would intake it, we would shelve it, we would check it out, we would move it, and we would dispose of it. The whole scenario we created was designed to see how systems would work." (On checking data migration) "Once that data was migrated over, I was constantly checking to make sure that everything was entered correctly. The dates were correct…" (On the old room) "It was a mess there. I spent about two months getting that in order. Just strictly there every day." (On purging) "Exactly. You don't administrative purge any evidence related to homicides, sexual assault, or major crime cases. Basically, we were purging out misdemeanor stuff that was old. But your low felonies, like property crimes, burglaries, thefts, those kinds of things." (On storage) "No, we do whatever shelf is available… It goes from old to new. So when an officer comes to check something out, they give us the case number and item number. We know exactly where it's stored and can go and pull it." "I will say that the more you move your evidence chances of an error occurring go up… That's why I hate that." (On keeping cases together) "We do try to keep everything married together… But with a good evidence management system, that's not an issue." (On containers) "I don't know how many people are using containers… initially, I was opposed to it. And then, I quickly realized how wrong I was. It's actually worked out really well." (On officers entering evidence) "That's the only way to go. If we did it the old way… that's redundant. There are two people doing the same thing. So, if you're doing that, I would encourage you to change that." "They know everything about that evidence. You know nothing about that evidence coming in." (On the new bulk facility) "By the way, that analytical chart was submitted to help justify the construction of this facility right here." (On remodeling advice) "For evidence storage, you need to maximize your footprint. So, these high-index rolling shelves will accomplish that. If you're designing a new building from scratch, try to have a release area near the public entrance." (On system being #1) "Yeah. That is number one. Aside from your facility, number one is a great evidence management system, and number two is an organized staff."
+
+      * David Bragg is the representative.
+
+      * Department size: 130 allocated officers, serves a municipal population of about 75,000, county population about 130,000.
+
+      * Has two full-time custodians in the evidence room.
+
+      * Manages somewhere in the range of 36,000 to 50,000 pieces of evidence every year.
+
+      * Averaging monthly intake of probably 750 to 800 items.
+
+      * 50% of inventory is media related (body cams, car cams, hard burns on disk).
+
+      * David mentions a challenge is potentially lessening media inventory if it could be moved to cloud storage.
+
+      * In two out of the last five years (relative to the interview), they disposed of more evidence than they brought in, with a massive amount of disposals in 2021.
+
+      * They do not use Tracker's Auto Disposition feature, instead using a manual, paper-based process.
+
+      * David developed an Excel document flow chart that helped significantly increase disposition.
+
+      * Their agency leadership has been very supportive of the evidence operation.
+
+      * David emphasizes honest talk with attorneys about disposition.
+
+      * Reports sent up to leadership are short (9-10 pages), mostly graphs with a little commentary, because "if it's too much, nobody's gonna read it".
+
+      * Graphs are the "telltale sign".
+
+      * When David started in 2011, the evidence room was antiquated, with antiquated software.
+
+      * He is described as being very technical and having a strong desire to produce numbers and statistics, which helps in inventory management.
+
+      * Their IT department worked with Tracker to migrate data from old records/RMS systems.
+
+      * David constantly checked the migrated data for correctness (e.g., dates).
+
+      * The old system was a "mess"; David spent about two months every day strictly getting it in order.
+
+      * Tracker imported a quarter of a million records for Bowling Green, including disposed evidence.
+
+      * Bowling Green was sitting on 60,000 pieces of active evidence after getting the software.
+
+      * They do not administratively purge evidence related to homicides, sexual assault, or major crime cases. They purged old misdemeanor stuff and low felonies like property crimes, burglaries, and thefts.
+
+      * After getting rid of 13,000 items, they were at roughly 45,000 pieces of evidence. Over the next couple of years, David moved every piece of evidence from its existing location to somewhere else, which was part of a process to check if the old data was good.
+
+      * Bowling Green uses two main sizes of evidence envelopes, 6x9 and 10x13, for most evidence. Barcode labels are attached to the packages.
+
+      * For storage, they use shelves with individual cubbies (storage locations). They put items wherever a shelf is available and scan the barcode location to file it numerically. Items go from old to new within the location. They know exactly where an item is stored by case and item number.
+
+      * Moving evidence around frequently increases the chances of error. Filing numerically by whole shelves creates gaps requiring constant shifting and wasting human resource power, which David dislikes.
+
+      * They try to keep everything married together by case, but large cases may require items to be stored in different locations if they fill a bin and more evidence comes in later. A good evidence management system makes this not an issue.
+
+      * Bowling Green does a 100% inventory once a year. Misplaced items are picked up during inventory.
+
+      * Bowling Green has an offense called "Found Property". Every week, they query a report for found property over 90 days old. Unclaimed items are pulled and disposed of, which is easily found with a good system.
+
+      * They group several items together inside one container. David was initially opposed but found it worked out well.
+
+      * Prior to destruction, items are incinerated at a commercial plant. A person from professional standards audits containers before destruction, seals them, and initials off. Evidence staff also initial them.
+
+      * Bowling Green officers enter their own evidence and print their labels. This is considered the "only way to go" to avoid redundancy. Officers know everything about the evidence they bring in, whereas staff know nothing.
+
+      * Bowling Green has a new bulk facility built a couple of years ago. An analytical chart (presumably the reports David generates) was submitted to help justify its construction.
+
+      * They have second-floor storage primarily for archiving, including long-term storage for biohazard and DNA items. Archived homicide evidence will eventually move there.
+
+      * Advice for remodeling for evidence storage: maximize your footprint using high-index rolling shelves. If designing a new building, include a release area near the public entrance.
+
+      * An evidence management system is considered number one. Having high index storage without a good system for managing/storing evidence doesn't matter. Aside from the facility, the number one thing is a great evidence management system, and number two is an organized staff.
+
+      * At Bowling Green, it was "terrible" to manage evidence based on their old evidence module. It took over a hundred keystrokes (not counting descriptive data) to log a piece of evidence into temporary and then permanent storage with the old system.
+
+      * Bowling Green has two full-time custodians in the evidence room. They manage somewhere in the range of 36,000 to up to 50,000 pieces of evidence every year. They average a monthly intake of probably 750 to 800 items per month. This trends almost year to year.
+
+      * 50% of Bowling Green's inventory is media related, including body cams, car cams, and hard burns on a disk.
+
+      * One challenge for Bowling Green is their large media inventory. They are exploring putting this media (video and audio interviews, body/car cam footage) on cloud storage to lessen inventory.
+
+      * Bowling Green sends a monthly report on the state of the evidence room to the commander of logistics, which goes up to the Chief. This report is used to make projections, such as reaching capacity or needing to dispose of items. It holds the department and leadership accountable.
+
+      * Agencies often feel leadership doesn't care what's going on. It is necessary to take initiative and push information up the chain. Consistently tracking and feeding data to leadership over time makes the argument about issues like running out of space. The data document is the argument, not a verbal one.
+
+      * By its nature, evidence is often "outta sight, outta mind" because it's a secure area with limited access. Reports reveal the state of the evidence room. If ignored and something goes wrong, the report serves as documentation that the state of the room was presented year after year.
+
+      * From a quick spot check of Bowling Green's data, in two out of the last five years, they disposed of more evidence than they brought in. A massive amount of disposals occurred in 2021.
+
+      * Auto Disposition is a feature of Tracker Products' SAFE software that sends a notification to the officer when cases come up for review; it is done electronically. Bowling Green does not use this feature, instead using a more manual paper process.
+
+      * David at Bowling Green developed a flowchart using an Excel document to help better understand what to do with evidence. Using this flowchart led to their disposition numbers significantly increasing.
+
+      * The flowchart is self-explanatory and can be modified to fit any agency.
+
+      * Bowling Green's agency has been very supportive of their evidence operation.
+
+      * Bowling Green's report to leadership is only nine or 10 pages long. Information is limited so it will be read. It consists mostly of graphs and a little commentary. The graphs are the "telltale sign" of the status of the evidence management unit.
+
+      * David at Bowling Green is described as very technical, with a desire to produce numbers and statistics. He likes order and neatness, attributing it to possibly having "a little bit of OCD". This trait helps with inventory management.
+
+      * The number one thing David had to get resolved when he started was getting a system that would allow him to produce this type of information, which he knew he did not have with the old system.
+
+      * On day one, David told his boss the old system had to go, and his boss and everyone up to the Chief agreed. He started researching evidence management systems immediately.
+
+      * He benchmark-tested two or three systems that rose to the top. Tracker's system was one of them, and Tracker provided an account for him to use for two or three months to "play around with it".
+
+      * To benchmark systems, David set up a "real-world scenario" with fake evidence, intaking, shelving, checking out, moving, and disposing of it to see how the systems would work.
+
+      * Many people buy software on recommendation without doing this level of testing. David dug extensively into the documentation before buying.
+
+      * Bowling Green's IT department worked with Tracker to migrate data from old records/RMS systems. David constantly checked the migrated data for correctness (e.g., dates).
+
+      * David's approach to benchmarking evidence management systems involved creating a "real-world scenario" with fake evidence to test intake, shelving, check out, movement, and disposal processes. He was noted for his extensive digging into documentation before purchasing software.
+
+      * After receiving the software and migrating 250,000 records (including disposed evidence), David was left with 60,000 active items and spent two months solely getting the old system's data in order. Ben told him it would take years to get everything done. Over the next couple of years, David physically moved every piece of evidence to check the data and work out issues from the old system.
+
+      * David described his preference for storing evidence in individual cubbies on shelves wherever space is available, scanning the location, rather than organizing numerically by whole shelves, which he dislikes due to the need for constant shifting when gaps occur.
+
+      * He initially opposed using containers to group items but quickly realized he was wrong and found it worked out well.
+
+      * David believes officers entering their own evidence is the "only way to go" to avoid redundancy and leverage the officer's knowledge of the evidence.
+
+      * An analytical chart representing the evidence room's state (presumably David's reports) was submitted to help justify the construction of their new bulk facility.
+
+      * David's report to leadership on the state of the evidence room wasn't requested but was presented proactively to show the data and problems, demonstrating that the data itself becomes the argument for needs like increased space or resources.
+
+      * Bowling Green developed a paper flowchart for disposition because they didn't use the auto disposition feature, and using this manual process significantly increased their disposition rate.
+
+Clay County Sheriff's Office
+         * Mike from Clay County Sheriff's Office: (On the old log book) "you could find things pretty easily, but it was just very, very time-consuming." (On tracking items over time) "It was just very hard to kind of keep track of all of that." (On the drug task force system) "theirs was all paper. The whole thing was just all on that in a book, and there was no organization to it whatsoever. It was just a monstrous mess." (On finding items in the old system) "If you needed it down the road, you literally had to dump the tub in the middle of the floor and dig through it to see if you could find it."
+
+         * Mike is the representative, Sergeant of Support Services in Field Operations.
+
+         * Department has roughly 250 employees, 125-150 sworn officers.
+
+         * Serves Clay County, MO, one of the Northern counties of Kansas City, total county population about 275,000 people.
+
+         * Handled evidence, watch guard cameras, search warrants, and equipment.
+
+         * At a previous small agency, their evidence management was all paper and pen.
+
+         * Started with SAFE technology in 2016.
+
+         * Before SAFE, used a basic computer system for logging only, which was very time-consuming.
+
+         * Also had a separate drug task force unit in a different building where evidence was all paper and disorganized ("monstrous mess"), organized by suspect's last name in plastic tubs that had to be dumped out to find items.
+
+         * Mike notes that Tracker's support staff are always "right there, ready to help" anytime they've had problems.
+
+         * Had "standing conference calls" with support staff for "at least a month or two" during implementation.
+
+         * Clay County used a log book that showed bin locations, making items easily findable but very time-consuming. Keeping track of investigative cases with items coming in at different times was hard.
+
+         * The Clay County Sheriff's Office was organized, but the drug task force unit in a different building was never taught the reporting system; their system was all paper, a "monstrous mess". They used bins organized by the suspect's last name, requiring dumping tubs to find items.
+
+         * Clay County Sheriff's Office has roughly 250 employees and 125 to 150 sworn officers; the rest are civilian.
+
+         * Clay County is one of the Northern counties of Kansas City, Missouri. The community population is about 275,000 altogether.
+
+         * The Clay County Sheriff's Office struggled with a time-consuming log book system and a completely unorganized, all-paper system used by their drug task force unit, which required dumping bins organized by suspect last name to find evidence.
+
+Des Moines PD
+            * Ben (presumably from Tracker Products): (On Des Moines PD) "these are statistics from your evidence room since the beginning of time since you started using a software application and entering evidence you guys have entered a little over two hundred and ten thousand two hundred and ten thousand pieces of". (On Des Moines drug security) "you have heightened security on drug storage areas but what you've done it Des Moines is unique in the sense that… you've got entry requirements that go outside of the evidence management unit". (On Krista at Des Moines PD) "the results you're getting are very good". "I've seen you do some things that like a lot of our clients don't do like with tagging in your disposition". "how do you go about doing what you're doing because I believe this right here is unbelievably valuable for the greater you know audience of evidence administrators that are out there".
+
+            * Shawn Henderson of the Evidence Management Institute (a partner agency to Tracker) is featured.
+
+            * Des Moines PD is a large metropolitan agency (300+ officers).
+
+            * They have heightened security on drug storage areas, including two-person drug vault entry rules, and entry requirements that go outside the evidence management unit.
+
+            * For every piece of evidence going out, authorization is obtained from someone outside the unit (sometimes court orders or DA authorization).
+
+            * They are not disposing of stuff arbitrarily, it's all with appropriate authorization and documentation.
+
+            * Administrators in the evidence room deal with Tracker.
+
+            * Des Moines PD processes 750-800 items monthly.
+
+            * Has a customized auto-disposition setup for different case types.
+
+            * Uses comprehensive monthly reports tracking all evidence movements.
+
+            * As of the time of the webinar, the Des Moines PD had entered a little over 210,000 pieces of evidence since starting to use a software application.
+
+            * Des Moines PD has heightened security on drug storage areas. Many agencies have two-person drug vault entry rules, but Des Moines PD's requirements involve people outside the evidence management unit.
+
+            * At Des Moines PD, when they get up to roughly 300 items in an area, they generate a list to pull for destruction. They double-check that items say "story approved" when logging them off.
+
+            * Ben believes what Des Moines PD is doing with their evidence management, including unique security for drug storage and disposition processes, is "unbelievably valuable" for other evidence administrators.
+
+El Mirage Police Department
+               * Jason from El Mirage Police Department: (On networking/training) "Arizona has a really good association, where all the agencies get together. And they have quarterly meetings and a two-day conference up in the high mountains. We all talk about what's going on. What's trending. So, it worked out well." (On walking in 12 years ago) "Unfortunately, El Mirage was kind of in dire straits. They had everything thrown into Conex boxes. There was really no management of the system. It was a conundrum. It was a mess." "And so, it took me probably a good three and a half to four years to get it all cleaned up, processed, and organized." (On storage philosophy) "maybe every single case should be together. And then, as I learned, it didn't really matter where you stored it in the warehouse so long as you could find it." (On mimicking others) "I just mimicked some of the other agencies that I was researching, and taking tours of their warehouses." (On old system) "It was pen and paper. And then, we started using the Spillman RMS." (On disposition stats) "They've disposed of 37,608. So, that's a strong disposition ratio. You have disposed of 60% of everything you've ever touched. So, that's a solid number." (On his role) "I'm the only evidence tech for the El Mirage PD… So yeah, a little bit of everything." (On RMS vs. dedicated software) "The discrepancy reports right off the bat. The ease of doing the audits and inspections on myself. The ability to just be able to see the screen to know what's coming in and out, without having to run a Crystal Report. I don't even know how to describe it, because it's just so easy." (On efficiency) "I mean, I can process 250 items in less than two hours once I get it all set up and ready to go." (On the facility before) "No. Nothing of the sorts." (On packaging) "I kind of keep it neat, secure, tight, and clean." (On external storage) "I just acquired those because of search warrants… [Before getting them], I had everything inside the warehouse; I couldn't even walk my own warehouse." "But, that's how the old warehouse used to be… it was just two Conex boxes. Everything was thrown in there, and you had to dig through it to figure out where everything was." (On audits) "Thankfully I passed with flying colors." "I think it's a mental status… if I can't find something within two to five minutes, I feel stressed. I take pride in what I do. I know the past history of El Mirage [PD], and I don't want it to happen again. I want to make the chief look good and that's my goal. I want my supervisor to trust me and understand what to do to make sure that it's being done correctly. And like I say, I just love what I do. It's an awesome job." (On key to success) "Just networking… I really hammered down on getting out there and looking to see what other agencies had to offer. And, just tried to mimic some of the best practices." (On disposition workflow) "It's through our RMS system. Everything's done through Spillman, unfortunately. Not through Tracker."
+
+               * Jason is the representative, the only evidence tech for the department.
+
+               * Department has 45 sworn officers; it's a small department.
+
+               * When Jason first walked into El Mirage 12 years ago (relative to the interview), the department was in "dire straits" regarding evidence; everything was thrown into Conex boxes, no management ("a conundrum, a mess").
+
+               * It took him 3.5-4 years to clean up, process, and organize it.
+
+               * He learned that where evidence is stored doesn't matter as much as being able to find it.
+
+               * Mimicked practices from other agencies he researched/toured.
+
+               * When he started, there was no software in play, just paper/handwriting.
+
+               * He also assists detectives with search warrants, photographs scenes, documents/collects/packages evidence, does NIBIN entry (test firing qualified firearms, collecting casings, entering into database), does lab runs, redactions, pulls 911/radio recordings, helps with prosecutor/attorney requests, and is the supply Sergeant.
+
+               * He realized using the Spillman RMS was redundant because officers put information on paper forms, and he had to re-type it.
+
+               * He switched to typed forms but still had to re-type.
+
+               * He researched systems where officers could enter data directly and found Tracker.
+
+               * The way Tracker was set up ("the ease and the ability for the officers to go through a process") made sense, and he was able to sell it to the department.
+
+               * Using SAFE has "saved so many hours".
+
+               * The evidence room now consists of six shelving units, with room to add another unit; he hopes to move to high density shelving but wants to avoid needing it by managing inventory.
+
+               * His warehouse operates at "30% capacity... if that" after implementing SAFE, having previously been so full "you couldn't even walk my own warehouse".
+
+               * Had an external agency inspection (passed "flying colors") and a DPS audit inspection.
+
+               * Values external audits to know if things are up to par.
+
+               * Uses the Facebook community group to network and learn from others.
+
+               * Learned about a different tagging system from the first webinar he attended and is trying to adapt it for destruction sorting.
+
+               * Stresses networking as critical to his success over 12 years, researching and mimicking best practices from other agencies.
+
+               * Disposition process is done through their RMS system (Spillman), not Tracker.
+
+               * Successfully transitioned from an entirely paper-based system.
+
+               * Officers quickly adopted the system with minimal formal training due to on-demand resources.
+
+               * Performed three separate inventories in just minutes using the mobile application.
+
+               * At El Mirage PD, Jason went to training courses and networked with other agencies in Arizona, which has a good association with quarterly meetings and conferences.
+
+               * When Jason first started at El Mirage 12 years ago, the department was in "dire straits". Everything was thrown into Conex boxes with no system management, described as a "conundrum," a "mess".
+
+               * It took Jason about three and a half to four years to get the El Mirage PD evidence room cleaned up, processed, and organized. He then built upon that.
+
+               * Jason initially thought every single case should be together but learned it didn't matter where evidence was stored as long as it could be found. He built his system based on this, mimicking other agencies and taking tours.
+
+               * When Jason started at El Mirage PD, they used pen and paper, then started using the Spillman RMS. He had to transfer paper copies into Spillman to get a barcode.
+
+               * As of the webinar, Jason has 22,208 items in his evidence room. They have disposed of 37,608 items, representing a strong disposition ratio of 60% of everything they've touched.
+
+               * Jason is the only evidence tech for the El Mirage PD. His duties include assisting detectives with search warrants, photographing/documenting scenes, collecting/packaging evidence, NIBIN entry (test firing, collecting casings, entering into Phoenix PD database), lab runs, redactions, pulling 911/radio recordings, assisting with prosecutor requests, and serving as Supply Sergeant.
+
+               * Transitioning from the Spillman RMS to a dedicated evidence management application provided several benefits for Jason at El Mirage: discrepancy reports "right off the bat," ease of doing audits/inspections, and the ability to easily see what's coming in/out without running Crystal Reports.
+
+               * Jason can process 250 items in less than two hours once everything is set up.
+
+               * The El Mirage warehouse has six shelving units. Jason has room to grow and can build another shelving unit if needed.
+
+               * Jason uses 6x9 and 10x13 envelopes for many items (paper bags, clothing, biohazard) and keeps storage neat, secure, tight, and clean.
+
+               * El Mirage PD acquired external containers (Conex boxes) for search warrant items because the warehouse was too full to walk through. They store items like equipment from "grow" homes, bicycles, large equipment, and tools in these containers. The old warehouse was just two Conex boxes where everything was thrown in, requiring digging to find items.
+
+               * El Mirage PD had external agencies (including DPS) conduct audit inspections under two different chiefs, and Jason passed.
+
+               * During one audit check, Jason did three inventories in three locations (totaling almost 60 items) and found one discrepancy within minutes.
+
+               * Jason gets stressed if he can't find something within two to five minutes. He takes pride in his work and wants to make the chief look good and his supervisor trust him. He loves his job.
+
+               * A critical success factor for Jason over 12 years is networking; visiting other agencies (largest and smallest), seeing what they offered, choosing what worked for El Mirage, and mimicking best practices.
+
+               * El Mirage has 45 sworn officers, making it a small department.
+
+               * El Mirage PD uses their RMS system (Spillman) for the disposition workflow, not Tracker.
+
+               * Jason's experience walking into the El Mirage PD evidence room 12 years ago was seeing everything thrown into Conex boxes, a "mess" that took him three and a half to four years to clean up and organize. He built his system based on learning from other agencies that finding evidence was key, not strict case-based organization.
+
+               * Jason's numerous duties as the sole evidence tech at El Mirage PD highlight the demanding nature of the role, covering everything from search warrants and lab runs to redactions and supply management.
+
+               * His ability to find discrepancies quickly during audits (one in nearly 60 items within minutes) is attributed to a "mental status" and a desire to take pride in his work and make leadership look good. His key to success was networking with other agencies and mimicking best practices.
+
+Erlanger Police Department
+                  * Doug from Erlanger (KY) Police Department: (On auto disposition) "We are much more efficient with our process and processing items – all the way through to disposal – because of that feature. It saves a lot of time and gets the whole organization involved, rather than just paying one person to go through and research disposals." "Yes. I think that feature makes our operation much more efficient and provides a lot more accountability." (On process impact) "So, if the process is cumbersome, or the process is a pain for the officers, then quality goes down, your conviction rate would go down, your number of arrests would go down; the way you do your job is going to be lower quality." (On other software) "They have a module that will handle your evidence… but they're not mission-specific to evidence. And they never worked out; they were just add ons…" (On system requirements) "I think it's so important to have a standalone, cloud-based system, where your entire staff can access it – with given permissions – to see your evidence quickly. And the only thing you're depending on is a device and the internet." (On customer service) "over and above that… it's been the customer service. When you call SAFE, there's a team of people that are gonna get back to you and help you solve that problem." (On the future) "The way of the future is integration and convergence. If we could get the program vendors, and the state, all on the same page, we would save millions and millions of dollars."
+
+                  * The interviewee is Douglas (Doug) Eagler, the training officer and formerly the assistant chief.
+
+                  * The department has about 47 sworn officers.
+
+                  * Doug is in his 29th year in law enforcement (relative to the interview date). He retired as assistant chief in 2016 and returned as training officer.
+
+                  * His duties include setting up and tracking training, compliance with training requirements, teaching firearms, and overseeing field training officers. His position includes oversight of evidence. Due to Cov19, he is doing evidence management mostly by himself, in addition to other duties.
+
+                  * Erlanger PD has a long-term relationship with Tracker Products, spanning over 29 years. They use Tracker's SAFE software.
+
+                  * Doug highlights the Auto Disposition feature as making their operation much more efficient and providing a lot more accountability. He states that because of this feature, they are much more efficient with their process from intake all the way through disposal. It saves a lot of time and gets the whole organization involved.
+
+                  * They have set up the system so a police clerk constantly researches items for disposal, using a specific tag for court-ordered disposal lists.
+
+                  * Doug believes integration and convergence of program vendors and state systems is the way of the future that could save millions.
+
+                  * He contrasts Tracker's mission-specific evidence software with modules found in CAD programs, stating the latter were just add-ons and never worked out.
+
+                  * Doug Eagler is quoted elsewhere as saying SAFE has significantly improved their process, is user-friendly, enhances the quality of evidence tracking, and has exceptional customer service. He calls it a "very capable and powerful program that saves time and increases efficiency".
+
+                  * Kristee from Tracker has visited several times to help with agency-specific issues or training.
+
+                  * At Erlanger Police Department, the auto disposition feature makes their process and processing items (including disposal) much more efficient. It saves time and gets the whole organization involved, rather than just one person researching disposals. This feature provides more accountability.
+
+                  * If the evidence process is cumbersome for officers, quality goes down, conviction rate goes down, number of arrests goes down, and overall job quality is lower.
+
+                  * Doug at Erlanger Police Department has experience with evidence modules in CAD programs that were not mission-specific to evidence and never worked out; they were just add-ons.
+
+                  * A standalone, cloud-based system is important for evidence management, allowing the entire staff to access it quickly with permissions, depending only on a device and the internet.
+
+                  * The customer service from SAFE has been "over and above" the system itself for Doug at Erlanger PD; a team gets back to you to help solve problems when you call.
+
+                  * Integration and convergence are seen as the future, potentially saving millions if program vendors and the state align.
+
+                  * At Erlanger PD, a police clerk constantly researches items for disposal. Doug had the system set up so she could get a specific tag ("court-ordered disposal") to easily tag items approved for disposal.
+
+                  * Doug's positive experience with Tracker's customer service, described as "over and above" the system itself, with a team ready to help solve problems, is a key reason he would recommend the software.
+
+Forest Park Police Department
+                     * Tracker Products rep/David: "Tracker Products… what we are really trying to do is change the culture of evidence management." "we don't just care that you have great software, but we also want to make sure that you're following the best industry practices. And, ultimately that the industry as a whole is elevated to the next level." "One of the ways we do that is by sharing thoughts and ideas, which is why our webinars, like the one we have today, are so valuable." (On Forest Park dashboard) "You have done a good job of customizing the system, so that you have a whole section on temporary storage lockers." "We would've data-imported your information, but you need to physically do that full 100% inventory to touch each item." (On Forest Park purge) "So, as you were bringing things back in, you did a fairly sizable purge." (On packaging changes) "Can you tell me a little bit about your packaging changes? Because what we'll see when we go into the new evidence unit is that all of these bottles and loose items that were on the shelf before… that's no longer the case." (On Forest Park transformation) "I think your transformation can be summarized by one 'word' – 360. You've completely transformed your property room." (On accountability) "So, a year from now, if the Chief comes in and he's hassling you… Why was this destroyed? Without any hesitation you click into the case. You find that information, Here you go." (On Forest Park implementation) "A lot of agencies are getting prepped to do this activity. What would you say, having gone through it now? You've had some growing pains. You've had some hiccups along the way. It's always a learning process." (On system usability) "Honestly that is refreshing to hear, because a system that's cumbersome and that's difficult to use, won't be used. It will be pushed back on hard."
+
+                     * Lieutenant Pape from Forest Park Police Department: (On facility/vehicle bay) "The vehicle bay is marked as a separate storage unit… As soon as I bring a car in to be processed, I actually have a sticker on one of the walls. I scan it because the car gets logged in as well. It gets a property tag. I scan it, so now it's in the system as being in the lab/garage." (On system usability) "This is a very user friendly system. I'm used to RMS systems, which are not flexible at all. We have molded this to work the way we want it to work." (On customer support) "if there are things I don't know how to do in the system, I'll email your customer support team and I'll get one back and they're like… That's a great idea, let's do it! Or… This is how you do it."
+
+                     * Officer Crowley from Forest Park Police Department: (On packaging) "We did some research with some neighboring agencies that are using the same system. The SAFE system. The envelopes were kind of copied off of some different stuff that people were using and it's working out great for us. We have basically two envelopes for everything. If it fits, it goes in one of these two envelopes… Everything else we've done was something we came up with, or made ourselves."
+
+                     * Interviewees are Officer Crowley and Lieutenant Adam Pape.
+
+                     * Lieutenant Pape is the operations commander, overseeing road patrol and CID, and the property room.
+
+                     * Department size: 37 police officers.
+
+                     * They are a medium-size agency within their county.
+
+                     * In 2018, their RMS system (used by 22 agencies) had a huge data loss (suspected cyber attack), losing data from 2014 onwards.
+
+                     * It took over a year to restore some data, with a chunk permanently lost.
+
+                     * This loss of RMS data, which detailed evidence and property, was a huge impact.
+
+                     * Due to this data loss, they decided not to use their RMS module for property, preferring a separate evidence management system with multiple backups.
+
+                     * They use Tracker's SAFE system.
+
+                     * They revamped and built a new evidence room and implemented the software over two years.
+
+                     * Have an intake station for officers to log in, enter evidence, print barcode labels.
+
+                     * Installed pass-through shelving/temporary lockers feeding into the secure unit.
+
+                     * Their customized SAFE dashboard has a section for temporary storage lockers, showing items awaiting processing.
+
+                     * They have cold storage and electronic storage within the locker system.
+
+                     * They didn't have information for data import due to the RMS data loss, so they did a full 100% physical inventory, touching each item.
+
+                     * During this process, they did a sizable purge, logged items in the system, and got approval from the Chief and District Attorney's Office for disposal of outliers based on the old system/process.
+
+                     * Changed packaging, now primarily using two envelope sizes for most items, copied from neighboring agencies using SAFE.
+
+                     * Have a larger item storage/processing facility adjoining the main room, used for processing large items like vehicles while waiting for search warrants.
+
+                     * They customized their workflow for items awaiting destruction; once they get the court order, they move the item to a specific bin (physically) and mark it in the customized system setup.
+
+                     * The dashboard tells them how many items are awaiting destruction.
+
+                     * If questioned about a destruction later, they can click into the case in the system to find the information and court order.
+
+                     * The vehicle bay is marked as a separate storage unit in the system.
+
+                     * When a car is brought in, it's logged in, gets a property tag, is scanned into the "lab/garage" storage unit.
+
+                     * The chain of custody report tracks every step (e.g., logged into garage, moved, packaged, put on shelf in inner storage).
+
+                     * Report being at 30% capacity after implementing SAFE, having previously been at maximum capacity (implying cost avoidance from deferred expansion).
+
+                     * A phased implementation approach prevented disruptions during their transition.
+
+                     * Tracker tracks all court orders within the system for future reference.
+
+                     * At Forest Park PD, the SAFE dashboard shows all evidence, what's coming in and out. They customized the system with a section on temporary storage lockers showing which lockers have items. They also have cold storage and electronic storage.
+
+                     * Tracker would data-import information, but a physical 100% inventory to touch each item is necessary. Forest Park PD lost all their data using the old RMS system.
+
+                     * As Forest Park PD brought items back in, they did a sizable purge. This process allowed them to move and touch everything, logging its location in the system, and identify outliers lost by the old system. They secured court-ordered disposal approval from their Chief and District's Attorney Office.
+
+                     * Forest Park PD researched neighboring agencies using SAFE for packaging ideas. They use basically two envelopes for everything that fits. Other packaging is used for big items.
+
+                     * Forest Park PD's transformation is summarized as "360" – a complete transformation of their property room.
+
+                     * Using the software, Forest Park PD can quickly access case information to explain why something was destroyed if the Chief asks.
+
+                     * At Forest Park PD, the vehicle bay is marked as a separate storage unit in the system. The "lab/garage" is also a storage unit. Cars brought in for processing are logged by scanning a sticker, get a property tag, and are scanned into the lab/garage unit.
+
+                     * A cumbersome or difficult system won't be used and will face pushback. Technology should automate, simplify, and provide management controls, but also be simple and easy to learn.
+
+                     * Forest Park PD finds SAFE a very user-friendly system, unlike RMS systems which are not flexible. They molded SAFE to work the way they want. Tracker customer support helps with questions and is receptive to new ideas.
+
+                     * Forest Park PD Lieutenant Adam Pape, who oversees the property room, collaborated on revamping the evidence room and implementing SAFE after losing all data with their old RMS system. They used the implementation process to perform a sizable purge and log items into the new system, getting court-ordered disposal for lost outliers.
+
+                     * Officer Crowley at Forest Park PD describes researching neighboring agencies using SAFE to develop their packaging system, now primarily using two envelope sizes for most items.
+
+                     * Lieutenant Pape finds SAFE very user-friendly and flexible compared to RMS systems, stating they molded it to work as they wanted and that customer support is responsive to questions and ideas.
+
+Hillview Police Department
+                        * Lieutenant from Hillview Police Department: (On starting) "I'd never managed a property room. I got kind of a crash course as far as how it worked. So, a lot of it was just research: visiting other departments, seeing what everybody else was doing, looking at policies and procedures from other agencies." (On accreditation) "2016 was also the year that our agency went toward accreditation. So, there were a lot of things from the accreditation standards that we had to put into place. A lot of that helped as a guideline for me to get to the end result." (On training) "One of the things that we did is educate the officers through training about why it's important to keep that area clean. Because cross-contamination… that's what defense attorneys are going to attack when it comes to your evidence." "So, I like to tell the officers when you're building a case – that's going to go before a judge and potentially a jury – you act like that's a loaded gun the defense attorney is going to fire at you when you're on the stand. So, if you can take as many bullets out of that gun as possible and make sure that your case is air-tight – especially with evidence processing – you're definitely going to walk into the courtroom with the ball more in your court and in your favor." (On department size) "Our community is just under 10,000 citizens and we have a department size of about 20 full-time officers. So, we stay pretty busy. We get a lot of overflow from Louisville, Metro." (On starting with Tracker) "Once we decided that we were going to go with Tracker, any and all new evidence that our agency took in would be entered into Tracker." (On old evidence) "The old evidence that was in log books and evidence cards. I had to go through and check to see if these cases were adjudicated. If so, we'd get rid of that evidence." (On room before) "When I took over stuff was piled up from the front to the back. Just imagine things piled up about three feet high, all over the floor and shelves overflowing." (On organizing) "So, what we did as part of the accreditation process, was to separate the drugs, money, guns, and high value items." (On disposition responsibility) "When a disposition notification goes out, it goes to the officer that it's assigned to. And I put in the notes, Hey, this case has been adjudicated, you need to respond to this task within 14 days if you want to keep it or not. If I don't get a response in 14 days, then I go to his Sergeant. If I don't get a response from his Sergeant in X amount of days, I go to his Commander and say, I have not heard from him. So, I'm fixing to get rid of this. Is there any reason why not? Because, I'm not checking to see if they pled or whatever the case is." "We're a 20 man department. Officers within our department wear multiple hats… So, to add disposition on top of all of his responsibilities, it's just not feasible."
+
+                        * Detective from Hillview Police Department: (On labels) "The labels that are here in front of you were actually a reaction to what we were getting back from state police." "We wanted to try to give them a heads up. So, if we talked to a suspect and a suspect overdosed – or whatever the case was – and we suspect that there could be fentanyl inside of that drug that we're taking in, the officer will go ahead and affix our own label prior to going to the state police lab, so that they kind of have a little bit of a heads up." (On vacuum sealing) "As of right now, we vacuum seal all drugs." "What you're looking at here… you've got five rows there. From left to right, 2016, 17, 18, 19, and we're currently on 20, which is the far right side. And everything is in order by case number. The case numbers are in numerical order, by the way the officer enters it." (On labels inside vacuum seal) "You see that green line? That's just the Ziploc baggie that is inside of an evidence bag… So, we immediately put it inside a vacuum-seal bag and then seal the entire bag. The label is actually inside that sealed bag. So, there's no chance of the label coming off and getting displaced.You can still scan right through the plastic." "Yeah, absolutely. I mean, we're here to learn too. Maybe we need to change up some of the things that we're doing here."
+
+                        * Ben (presumably from Tracker Products): (On custodian role) "You would not believe how many agencies have the opinion that the custodian is not only responsible for custodying the evidence, but they are also responsible for what's going on with it and checking in with the courts. It's absolute insanity." "While I like to see a more automated version of what you just described, the fact that you go back to the officer and say: You claim it, you take it. It's your stuff. You've got to answer for it." "Somebody is probably going to take this recording and go back to their boss and say, Hey, look at what this guy is saying. So, you may get a call from somebody asking, Did you really say that? Yes is the answer." (On Hillview room) "It's not a massive evidence room, but what I do like seeing is the uniformity." (On vacuum sealing) "Not everybody is doing vacuum-sealing with evidence. So, I'm sure a lot of good is going to come out of this." (On clearly marked biohazard) "I'm always a big fan of clearly letting people know this is something to be dealt with carefully."
+
+                        * Interviewee is Chris Boone, a Detective. Later interviewees are Lieutenant Charles McWhirter and Detective Scott Barrow.
+
+                        * Department size is about 20 full-time officers, described as a small agency, sometimes noted as 18 officers.
+
+                        * Serves a community just under 10,000 citizens.
+
+                        * Gets overflow from Louisville Metro.
+
+                        * Before Tracker, used a log book and cards.
+
+                        * Officers entered evidence in inconsistent ways, making it hard to keep track.
+
+                        * Switched to Tracker.
+
+                        * Officer training method involved being given login/password and told to click save and view the page if lost.
+
+                        * Chris learned the system on his own and was able to train others.
+
+                        * Finds Tracker Products has made his life a lot easier.
+
+                        * Their evidence room setup is working and is shown as an example to other departments by KLC (Kentucky League of Cities), which contributes to them being a KLC accredited department.
+
+                        * Being accountable for everything is a factor in accreditation.
+
+                        * When they started using Tracker, they were not coming from a different system, there was no possible import.
+
+                        * For old evidence in log books/cards, the Lieutenant went through to check if cases were adjudicated for disposal.
+
+                        * Any new evidence taken in after deciding on Tracker was entered into the system.
+
+                        * They follow a policy of going back to the officer responsible for the evidence, saying "You caught it, you clean it," holding officers accountable for their evidence.
+
+                        * Dispo tasks are not added on top of detectives' responsibilities as they wear multiple hats (e.g., Detective Scott is driving instructor, detective, property room custodian - one of two).
+
+                        * They are always looking for ways to improve and are willing to share information.
+
+                        * As part of accreditation, signage is required.
+
+                        * Educate officers on why keeping areas clean is important to avoid cross-contamination, which defense attorneys attack.
+
+                        * Use labels, including specific ones indicating potential fentanyl presence for state police lab's heads-up.
+
+                        * Have 781 pieces of evidence checked into the evidence room and have disposed of over a thousand pieces (in the last couple of years, relative to the interview).
+
+                        * They are not full-time evidence custodians, just officers.
+
+                        * Have custom training programs.
+
+                        * Training costs were built into onboarding, making it accessible.
+
+                        * At Hillview Police Department, the Lieutenant researched and visited other departments, reviewed policies/procedures, and used accreditation standards as a guideline when he started.
+
+                        * Signage is required as part of the accreditation process. Officers were educated on the importance of keeping areas clean to prevent cross-contamination, which defense attorneys may attack. Evidence processing being air-tight helps make a case "air-tight".
+
+                        * Hillview PD uses specific labels based on feedback from the state police lab, especially for suspected fentanyl, to give the lab a heads-up. Officers affix their own label if fentanyl is suspected.
+
+                        * Hillview community is just under 10,000 citizens. The department has about 20 full-time officers. They stay busy, getting overflow from Louisville Metro.
+
+                        * Ben notes there is no reason a really large police department cannot have an evidence room like Hillview's, which looks "spectacular".
+
+                        * Hillview PD has 781 pieces of evidence checked into their room. They've disposed of over a thousand pieces in the last couple of years.
+
+                        * Hillview PD did not come from a different system when starting with Tracker, so no data import was possible. Any new evidence taken in was entered into Tracker. Old evidence in log books/evidence cards was reviewed for case adjudication to determine disposal.
+
+                        * Hillview PD's evidence room was previously piled high with stuff all over the floor and overflowing shelves. As part of accreditation, they separated drugs, money, guns, and high-value items. The room now has uniformity.
+
+                        * At Hillview PD, the evidence custodian is not responsible for checking with the courts regarding disposition; it is the officer's responsibility. Disposition notifications go to the assigned officer. The officer is responsible for answering for the evidence. If an officer doesn't respond, the Lieutenant follows up, escalating to Sergeant/Commander for direction if needed.
+
+                        * Hillview PD is a 20-man department where officers wear multiple hats. Detective Scott is a driving instructor, detective, actively works cases, and is one of two property room custodians. Adding disposition on top of his responsibilities is not feasible.
+
+                        * Hillview PD uses clear biohazard markings.
+
+                        * Hillview PD is doing vacuum-sealing with evidence. As of the conversation, they vacuum seal all drugs.
+
+                        * Vacuum-sealed drug evidence is organized by year (2016-2020), then in numerical order by case number (as entered by the officer).
+
+                        * Drugs returned from the lab or not needing to go to the lab are immediately put into a vacuum-seal bag and the entire bag is sealed. The evidence label is placed inside the sealed bag to prevent it from coming off. The barcode can still be scanned through the plastic.
+
+                        * The Hillview PD Lieutenant describes the previous state of their evidence room as stuff "piled up from the front to the back... three feet high, all over the floor and shelves overflowing".
+
+                        * The Hillview PD Lieutenant states definitively that the evidence custodian is not responsible for checking with the courts regarding disposition; the officer is responsible for their own evidence and deciding if it's needed. This contrasts with the "absolute insanity" of agencies expecting custodians to check with courts.
+
+                        * Hillview PD's decision to vacuum seal all drugs and store the label inside the sealed bag to prevent it from coming off demonstrates a specific procedural best practice learned or developed.
+
+                        * The Hillview Police Department Lieutenant describes getting a "crash course" in managing the property room, relying on research and visiting other departments. Accreditation standards helped guide their process.
+
+                        * Training officers on why cleanliness prevents cross-contamination and telling them to treat evidence processing like disarming a "loaded gun" from defense attorneys helps make their cases air-tight.
+
+                        * Detective Scott at Hillview PD described their process of adding their own labels for suspected fentanyl on drugs before sending them to the state lab, based on feedback received from the lab.
+
+Jeffersontown Police Department
+                           * Debra is the representative.
+
+                           * Heard about Tracker from several agencies and visited a couple.
+
+                           * Has been using SAFE for about 2 years (relative to the interview).
+
+                           * Standout features were the cloud-based platform, good support, the scanning feature, and auto disposition.
+
+                           * Auto disposition tracks how long items have been kept from defendants, arrested persons, or personal property the jail wouldn't take.
+
+                           * They have 52 officers.
+
+                           * There was pushback from officers who don't use the system frequently and sometimes need assistance.
+
+                           * Because SAFE is cloud-based, Debra can log in from home or vacation to assist officers or fix mistakes.
+
+                           * SAFE has helped create more space in their facility.
+
+                           * Officers receive disposition tasks via email and must answer them through the system.
+
+                           * The system tells officers how many tasks are outstanding.
+
+                           * Once tasks are done, Debra can mark items for drug destruction or transfer (e.g., firearms to Kentucky State Police).
+
+Nappanee Police Department
+                              * Nik Havert from Nappanee Police Department: (On the old room) "We had so much stuff in that room. It was crazy. Plus, it needed some work. Like fumigation. We had some rodent problems. It was so gross; it was a massive project." (On high profile cases) "You're always told that with some of these high profile cases, you can't get rid of anything. You can never get rid of anything. Well, of course you can." (On the shoes) "there was a pair of shoes that were taken from a shooting victim at autopsy. They really had no evidentiary value, especially when mice have been through this bag and made a home. But the chief would say, It's from a homicide." (On auto disposition) "We do use the disposition. That was actually one of the first things that I set up. When I saw that feature, I was like, Oh, heck yes!" (On officers completing tasks) "The battle I have now is getting the guys to complete the task I send them for review like, Hey, do I still need to keep this?" (On COVID-19 impact) "due to COVID-19 – when a lot of our guys were stuck without much to do – I said, Hey, this is a great time to catch up on all those tasks I've sent you in Tracker. Some of them actually did go through with their tasks…" (On the duplicate feature) "The one that I use the most is the duplicate feature… That saves me so much time." "So that's a really good feature that I like."
+
+                              * Nik Havert is the representative, a detective and lead CSI.
+
+                              * Department has 15 full-time officers, 6 reserves, IT staff, and a secretary.
+
+                              * Most officers are road officers; there are two detectives (Nik is one) and another CSI who is also a road officer.
+
+                              * Serves a town of about 7,500 people, swelling to ~10,000 during the day due to manufacturing.
+
+                              * Nik has been with the department for 26 years (relative to the interview).
+
+                              * Was asked to take over CSI role, which appealed to his "love of puzzles".
+
+                              * Has been in the evidence management position for about five, possibly closing in on seven years (relative to the interview).
+
+                              * When he started in evidence, their tracking system was the old report management system (RMS).
+
+                              * The trickiest thing with adopting Tracker was giving officers permissions; links would expire if not used right away.
+
+                              * Some night-shifters didn't enter evidence for a month or more, causing link expirations.
+
+                              * They do use the disposition feature. It was one of the first things Nik set up because he saw the value.
+
+                              * The challenge now is getting officers to complete the tasks sent for review.
+
+                              * Due to COVID-19, some officers caught up on tasks, indicating what evidence to keep or dispose of.
+
+                              * They are now almost at the point of doing their annual evidence review/disposition (June-September) entirely in Tracker.
+
+                              * They still have old evidence in the old RMS to go through piece by piece.
+
+                              * For older cases, they can use Tracker to pull case numbers, types, suspect names, and cross-reference with court databases to determine if evidence can be pitched.
+
+                              * A standout feature Nik uses the most is the duplicate feature, which duplicates collection details (where, time, day, address, owner) for new items from the same case, saving significant time; he has shown other officers this feature.
+
+                              * The Nappanee evidence room was overwhelming, needed fumigation, and had rodent problems; it was "so gross" and a "massive project".
+
+                              * Nik recalls being told for high-profile cases "you can't get rid of anything," but he believes you can. He remembers a chief wanting to keep mouse-damaged shoes from a shooting victim because they were from a homicide, despite having no evidentiary value.
+
+                              * Nappanee PD does use auto disposition. It was one of the first things Nik set up because he saw the feature.
+
+                              * The current challenge for Nappanee PD is getting officers to complete tasks sent via Tracker for evidence review (e.g., "Hey, do I still need to keep this?"). Many officers forget. During COVID-19, when officers had less to do, Nik encouraged them to catch up on Tracker tasks, and some did.
+
+                              * The most used feature for Nik at Nappanee PD is the duplicate feature. He can duplicate an item and only change the description, saving time because it duplicates location, time, day, address, and owner.
+
+                              * Nik Havert at Nappanee PD inherited an overwhelming evidence room that needed fumigation and had rodent problems, describing it as "so gross". He faced challenges like keeping mouse-damaged shoes from a homicide case because the chief said so, illustrating the "you can't get rid of anything" mentality he disputes.
+
+                              * Nik immediately set up the auto disposition feature in Tracker, describing his reaction as "Oh, heck yes!". However, the ongoing challenge is getting officers to complete disposition review tasks. COVID-19 unexpectedly helped with this as officers had more time.
+
+                              * Nik's most used feature, the duplicate feature, saves him "so much time" by copying all initial details except the item description.
+
+Nicholasville Police Department
+                                 * Matthew Godsey from Nicholasville Police Department: (On taking the role) "I was getting toward retirement eligibility. At the time, our clerk was leaving pretty abruptly, so they asked me if I was interested in stepping in. Unfortunately, I only had one day to train with him, and I've not had any specific training in evidence management. It's been eye-opening for me, but I've enjoyed the challenge. I come at it with a different perspective, I think." (On support) "Yes, ma'am, it's been pretty invaluable." "I try to go to [Tracker's] Wiki site first… If not, I'll go into there and just ask directly. And it's been amazing. They were very, very helpful every time." (On the new facility) "they're intent on having everything inside. Nothing in external storage." "I know the space I'm allotted, and I know what the layout is going to be, but I haven't been told exactly what I'm going to be able to get as far as shelving…" (On recommending SAFE) "The customer service is the biggest thing. It's been amazing. It's helped me so much, just getting a handle on things." (On training/networking) "being able to interact, talk with, and message back and forth with other people doing the same job – who obviously have more experience than I have – has been great. I mean, it's been awesome to see how other agencies are run and what other facilities have. That kind of outreach really shows the devotion to this system – and to the customer – and really tries to make it as user friendly. And that's just been awesome for me."
+
+                                 * Matthew Godsey is a Lieutenant.
+
+                                 * City population about 30,000 people, with 65 officers serving the community.
+
+                                 * Matthew took over property and evidence operations at the beginning of 2020 (relative to the interview).
+
+                                 * He had 20 years on patrol before moving to evidence.
+
+                                 * Only had one day of training with the prior clerk and has had no specific training in evidence management.
+
+                                 * Finds the challenge eye-opening and enjoys it, bringing a different perspective.
+
+                                 * He reached out to Tracker's support staff, finding it "pretty invaluable".
+
+                                 * Used online articles and received proactive help from customer support.
+
+                                 * Used direct support at least three times.
+
+                                 * Tries Tracker's Wiki site first before asking directly.
+
+                                 * Describes support as "amazing" and "very, very helpful every time".
+
+                                 * Described as relatively technically savvy, learned through trial and error and online school.
+
+                                 * Was with the department when they used Fluid and switched to SAFE; found SAFE easier to tell what was inside an envelope because the labels were different and it wasn't just a barcode and number.
+
+                                 * Does not necessarily use the auto disposition function.
+
+                                 * Had a lot of evidence piling up; the prior clerk did maybe two big disposals a year.
+
+                                 * Has couple of very small rooms available for evidence.
+
+                                 * Quickly realized he needed to document disposals, especially firearms.
+
+                                 * Lacked documentation on prior disposables and couldn't find orders.
+
+                                 * Learned quickly to use the media aspect of SAFE to scan in court orders and attach them to specific cases for easy access.
+
+                                 * A new facility is planned, a two-story building, with evidence section downstairs, aiming to keep everything inside the facility, nothing in external storage.
+
+                                 * Will have flammable lockers.
+
+                                 * Not sure about high density shelving in the new facility.
+
+                                 * Check-in process: officers check things directly into him when he's in the office.
+
+                                 * When he's not there, or his door is closed, they use temporary lockers in the main building.
+
+                                 * Have an office for evidence processing with supplies.
+
+                                 * Paperwork must be completed and signed off by a supervisor.
+
+                                 * Supervisors must confirm money accounts.
+
+                                 * Items placed in hard metal lockers bolted to the wall with locks; Matthew is the only one with keys.
+
+                                 * Recommends SAFE software for its customer service ("biggest thing," "amazing," "helped me so much").
+
+                                 * Mentions online training/webinars (since Covid) are helpful.
+
+                                 * Benefits from interacting with other evidence professionals in IAPE online course and messaging them.
+
+                                 * Values seeing how other agencies/facilities are run.
+
+                                 * Feels the outreach shows devotion to the system/customer and makes it user-friendly.
+
+                                 * Matthew Godsey is a Lieutenant with the Nicholasville Police Department who took over property/evidence operations at the beginning of 2020.
+
+                                 * Nicholasville has a population of about 30,000 people, with 65 officers serving the community.
+
+                                 * Matthew did 20 years on patrol before taking over evidence, leaving as Patrol Lieutenant. He had only one day of training with the previous clerk and has had no specific evidence management training. He finds it eye-opening and enjoys the challenge, coming from a different perspective.
+
+                                 * Matthew has used Tracker's support staff directly multiple times and found it "pretty invaluable" and "amazing," "very, very helpful every time". He tries the Wiki site first before asking directly.
+
+                                 * Nicholasville PD is getting a new two-story facility where they intend to keep everything inside, not in external storage. The evidence section will be downstairs. It will be much bigger than his current setup with multiple small rooms. It will include space for bikes and flammable lockers. He knows the allotted space and layout but not shelving details like high-density shelving.
+
+                                 * Matthew recommends Tracker's SAFE software primarily for its customer service, which has been amazing and helped him get a handle on things. He also highlights the online training and webinars since Covid started.
+
+                                 * Matthew took an IAPE online course. He finds being able to interact, talk with, and message other people doing the same job (with more experience) through webinars/online communities has been "great," "awesome". Seeing how other agencies are run and what facilities have is helpful. This outreach shows devotion to the system and customer, making it user-friendly.
+
+                                 * Matthew's transition from 20 years on patrol to evidence management at Nicholasville PD with only one day of training highlights the challenge he faced. His reliance on Tracker's support staff, Wiki, and online community demonstrates how he is overcoming this lack of formal training and getting a handle on things.
+
+                                 * Matthew's positive experience with the online community and webinars, interacting with more experienced peers, has been "great" and "awesome," helping him see how other agencies operate and what facilities they have.
+
+Omaha Police Department
+                                    * Ben (presumably from Tracker Products): (On Omaha old system) "I remember the very first time I went down to the basement; I walked in the door and there are five people sitting in the intake area. And, over in the corner, there were these huge stacks of documents… what they would do every day – all day long – the officers would fill those out, put them at the back end of the stack down at the bottom, and every day the people in the evidence intake, would grab what was on the top of the stack – it's probably weeks old at that point – and they would enter it into your old mainframe system." "And I asked the question, Do they do anything other than that? And the answer was, We don't have time to do anything more than just enter it into the system. So, my thought was like, Well, that's got to change!" (On Omaha staffing) "So, that's roughly six or seven full-time people." (On Omaha scale) "You operate an evidence room that currently has almost 400,000 active items in it. You bring in almost 6,000 brand new items a month… 823,208 of them have been disposed of, and right now you have an active 387,700 items of evidence in your evidence room." (On Omaha organization) "We needed to get all this stuff together and try and figure out, Okay… this is where the gun room is… Instead of having six different areas where you could find drugs or guns. It was imperative for us – with the size of the agency – that we could identify if we did, or did not, have something." (On Omaha buy-in) "So, I had a lot of buy-in from a lot of those administrative sergeants who came down to help, and from some of their actual detectives and officers who also assisted." (On starting cleanup) "Make a list of items that you want to accomplish – and know that you're not going to get to that list all at once. Then you need to prioritize that list… Don't try to force everything like, Hey, I got two weeks to get this done. Don't put a timetable like that on yourself. Be more worried about the accuracy… But just make sure that you have a goal and something that you're going to be able to achieve." (On tough days) "I'm curious… on those days when you wanted to pull your hair out…. Can you give us an example of when you were like, What the heck is going on around here?" (On aisles) "Having an aisle for each of these different items really helps us because we know where we need to research and who we need to send that [notification] to."
+
+                                    * Staci from Omaha Police Department: (On old room) "Oh my God… it was horrible. Horrible. I'm like, How do you find anything in this chaos? Everywhere you looked… every nook and cranny, it seemed like something was jammed in there." "We actually had 17 refrigerator freezers. It was just crazy. Crazy." (On staffing) "I have four full-time evidence clerks and one part-time. I have a clerk-secretary, and two retired, part-time officers that do nothing but work on disposals." (On organization) "We needed to get all this stuff together and try and figure out… This is the drug room. All drugs will go in here… It was imperative for us – with the size of the agency – that we could identify if we did, or did not, have something." (On 20+ people helping) "If you can imagine, you have people bringing stuff in. People doing nothing but printing labels. Somebody else just checking that it's in the system, scanning it, making sure it's scanned to the right location. So, it's a big, ongoing thing." (On tech savvy staff) "And, of those 20+ people, I'd say probably 15 were very tech savvy. So, they understood the mission and they wanted to see it accomplished because they worked in units that, Boy, this would really be helpful when I want to research something from my burglary case. Or Hey, with my felony assault case… I want to know what evidence has been processed by forensics, or if it's at the court still?" (On lessons learned) "Make a list of items that you want to accomplish – and know that you're not going to get to that list all at once… Don't try to force everything like, Hey, I got two weeks to get this done. Don't put a timetable like that on yourself. Be more worried about the accuracy." "There were a lot of them [days wanting to pull hair out]!" (On melting evidence) "Unbeknownst to us, one of the outlets blew during the night, and things started to melt down onto paper envelopes." (On aisles) "This is our small envelope aisle." "The white envelopes in there are the master copies and the yellows are checkout. So if it goes to court, we always keep a master." (On mixed cases) "It depends on how it's packaged… If it's clothing, and it's a sexual assault, everything will go to the sexual aisle because we will not get rid of anything on a sexual assault. If it's a DVD or a CD of an interview, it's going to go to the envelope aisle." (On homicide exception) "Except on a homicide. If there's a homicide, everything goes into one banker box. But, with our homicides, it's usually two to four banker boxes on average. So, CDs would go in a homicide's banker's box, but that's the only exception."
+
+                                    * Staci Witkowski is the representative, a Lieutenant.
+
+                                    * A large organization with 600+ officers and hundreds of thousands of pieces of active evidence.
+
+                                    * They average 60,000 new pieces of evidence every year.
+
+                                    * Staci started working on transitioning to a computer system around 2012-2013 when they started transitioning to Tracker.
+
+                                    * She has been assigned full-time to evidence property for the last six years (relative to the interview).
+
+                                    * Before computerization, they were completely paper, everything in triplicate.
+
+                                    * Had 10-12 four-drawer filing cabinets full of hard copy reports to find item locations.
+
+                                    * When they ran out of space, they claimed other storage rooms, coat closets, empty offices, etc., storing items in 14 different areas throughout the department.
+
+                                    * They realized they had so many items because they didn't dispose.
+
+                                    * Civilian staff previously running the unit didn't have authority to destroy without officer approval/report and didn't know to ask officers to research disposals.
+
+                                    * To clean up, they needed to centralize items by type (e.g., all guns in gun room, all drugs in drug room), instead of having six different areas for one type.
+
+                                    * This helps identify if they have something.
+
+                                    * The evidence unit has 20+ people, some highly organized, about 15 were very tech savvy.
+
+                                    * Had buy-in from administrative sergeants, detectives, and officers who assisted, as they saw how helpful the system would be for researching cases.
+
+                                    * Advice for others: make a list of things to accomplish, prioritize it, know the list will change, don't put strict timetables (like 2 weeks).
+
+                                    * Prioritize accuracy.
+
+                                    * Focus on agency needs and realize you still have regular duties.
+
+                                    * Have a goal that's achievable.
+
+                                    * Having an aisle for different item types helps with research and notifications.
+
+                                    * They have a "Dream Unit" for downloading body worn camera, car camera, and surveillance footage.
+
+                                    * Keep master copies of media (white envelopes) separate from checkout copies (yellow envelopes).
+
+                                    * Their evidence room is presented as an example that large police departments can emulate.
+
+                                    * Tracker migrated systems for Las Vegas Metro PD with millions of evidence items.
+
+                                    * Staci Witkowski is a Lieutenant with the Omaha Police Department, a large organization with 600+ officers and hundreds of thousands of pieces of active evidence.
+
+                                    * Omaha PD averages 60,000 new pieces of evidence every year. Staci has been assigned full-time to evidence property for the last six years (relative to the interview).
+
+                                    * Before computerization, they were completely paper-based, with everything in triplicate. They had 10-12 four-drawer filing cabinets full of hard copy reports to find item locations.
+
+                                    * When they ran out of space, they stored items in 14 different areas throughout the department.
+
+                                    * To clean up, they needed to centralize items by type (e.g., all guns in gun room, all drugs in drug room), instead of having six different areas for one type.
+
+                                    * As of the conversation, Omaha PD operates an evidence room with almost 400,000 active items. They bring in almost 6,000 brand new items a month. Over 1.2 million pieces of evidence have been entered into the Tracker system, with 823,208 items disposed of.
+
+                                    * Staci has four full-time evidence clerks, one part-time clerk, a clerk-secretary, and two retired, part-time officers who do nothing but work on disposals.
+
+                                    * The evidence unit has 20+ people total, with about 15 being very tech savvy. They had buy-in from administrative sergeants, detectives, and officers who assisted with the transition, as they saw how helpful the system would be for researching cases.
+
+                                    * For media, they keep master copies (white envelopes) separate from checkout copies (yellow envelopes) that go to court.
+
+                                    * They use banker boxes for homicide evidence, with each case typically requiring 2-4 boxes. Unlike other evidence types, all homicide evidence, including CDs, is kept together.
+
+                                    * Advice for others: make a list of things to accomplish, prioritize it, know the list will change, don't put strict timetables (like 2 weeks). Prioritize accuracy and have achievable goals.
+
+Rumford Police Department
+                                       * Tony from Rumford Police Department: "If you can get everybody in the state of Maine, under Drug Enforcement, to all agree and comprehend a system like Tracker Products, you can manage anything that the [evidence] world wants to throw at you." "And, once agents here gave Tracker a chance, they realized, Wow, this is huge." (On his AHA! moment) "So, the first AHA! moment was when I asked those questions… and they couldn't be answered. It frustrated Dan." "You know, a little secret? I kind of wanted him to get frustrated so I could have a starting point to move us towards Tracker." (On finding evidence in SAFE) "It told us right where everything was and Dan just pulled stuff out from different bins with a big smile on his face. He said, This is awesome. I've never experienced this before." (On space savings) "Putting evidence in different locations makes much more sense for us and it has saved us an incredible amount of room. I mean, now we have 50% or more space than we had before because of SAFE. And that is prior to purging stuff. It's crazy!" (On chain of custody) "So what's left for the defense attorneys to attack, but your evidence; your chain of custody? And if you don't have an ironclad system – that can't be easily manipulated – then I think you're in trouble." (On recommending SAFE) "You can't do it justice on a website… You've got to get your hands on it… if departments… get their hands dirty with SAFE for a 30 day period, I would dare say, the percentage has got to be low, that they don't turn around and, and sign up for SAFE. It would blow my mind if they don't become a customer. Because how do you walk away from this?" (On purging) "I think it's an education piece, more than anything." (On the process) "At least, from my perspective, I did take a leap of faith. So you've gotta suck it up to get from here to there. But once you get there, it's worth it."
+
+                                       * Dan from Rumford Police Department: (On data entry challenge) "One thing that I've noticed – and this is more from a data entry side – if you're going to add evidence, SAFE mandates that certain fields need to be completed. Our other program did not require that. And so, [in the past] you might just get what the officer knew, or a partial piece of that information. Tracker's not going to let you complete the task until you have all that information."
+
+                                       * David Marks from Tracker Products: (On Rumford sales cycle) "You went live a month ago. From the time you reached out to us… you guys really turned the key to purchase within two weeks of that whole process; which is a lot faster than our typical sale."
+
+                                       * Implementation Date: A month ago as of the interview.
+
+                                       * Additional Benefits: Reached out, did a software demo, and turned the key to purchase within two weeks. Mandates that certain fields need to be completed when adding evidence, unlike their old system. Chain of custody system is ironclad and cannot be easily manipulated. Manually entered every piece of evidence onto a spreadsheet for import over three or four eight-hour days with overtime to make it work.
+
+                                       * At Rumford PD, implementing SAFE helped save an "incredible amount of room," resulting in 50% or more space even before purging.
+
+                                       * A challenge noted at Rumford PD is that SAFE mandates completion of certain fields during data entry, unlike their old system, ensuring full information is captured.
+
+                                       * Rumford PD's quick two-week sales cycle from reaching out to purchasing Tracker was much faster than typical, partly because Tony had seen the system before.
+
+                                       * Tony stresses that defense attorneys often attack the chain of custody, and an "ironclad system" that can't be easily manipulated is essential.
+
+                                       * Tony strongly recommends getting hands-on with SAFE for 30 days, believing the percentage of agencies who don't become customers after that would be "low" because "how do you walk away from this?". He views adopting SAFE as taking a "leap of faith" that requires "sucking it up to get from here to there," but is worth it.
+
+                                       * A short anecdote shows the system's usability: after Dan returned from vacation, he was able to put in new evidence and then easily use SAFE to move it from temporary processing to storage.
+
+                                       * Tony from Rumford PD's first "AHA!" moment with his old system was asking questions that couldn't be answered, which frustrated his colleague Dan and served as a starting point to move towards Tracker.
+
+                                       * Tony describes how using SAFE for just a week allowed them to easily find evidence for a case number in different bins, exciting Dan who had "never experienced this before".
+
+University of Kentucky Police Department
+                                          * Jackie from University of Kentucky Police Department: (On task system) "It was the quickest way, I've ever seen, to go through old evidence and reduce our inventory." (On recommending SAFE) "The ease of taking control of an entire evidence room – including different evidence locations – it's all right there. It does create a tremendous amount of accountability." (On support) "if anyone is like I am – not extremely tech savvy – you have an online chat [feature]… your support system is the best I've seen so far. Not just in the evidence, but in a lot of areas. You have the little chat box that pops up; it's there and it's ever present."
+
+                                          * The interviewee is Jacquelyn Riley, the property, evidence, and records officer.
+
+                                          * The department has about 50-55 officers.
+
+                                          * Jacquelyn has been in her current position since 2018, and with the University of Kentucky since 2009. She started in police dispatch in 2004. The evidence position was previously only for sworn officers but was opened to civilians when the previous officer left.
+
+                                          * Her duties primarily involve chain of custody, keeping records, statistical reports, and report requests. She also logs body cams, dash cams, and camera video surveillance systems. She processes all evidence and handles transfers, as well as reports and records.
+
+                                          * UKPD started using Tracker's SAFE software this year (relative to the interview date), having previously used Fluid, an older version from Tracker.
+
+                                          * Regarding handling old evidence, SAFE's task system was used to send notifications to officers responsible for old cases. Officers responded through tasks, indicating whether to retain or destroy the evidence. SAFE logged these responses. Jacquelyn states this was the quickest way she's ever seen to go through old evidence and reduce inventory.
+
+                                          * Reasons for recommending SAFE include the ease of taking control of an entire evidence room, including different evidence locations. It creates a tremendous amount of accountability. The support system is described as "the best I've seen so far," including an online chat feature and Wiki learning. Support is quicker, easier, and more customizable than systems she's worked with in her 15 years in police work.
+
+                                          * Jacquelyn describes herself as not extremely tech savvy, but able to get around enough.
+
+                                          * A suggestion for improvement was to have mock information available during training to practice using the system.
+
+                                          * At University of Kentucky Police Department, SAFE's task system facilitated officers reviewing old cases and responding via tasks on whether to retain or destroy evidence, logging the responses day-to-day by officer, which was the quickest way seen to reduce inventory.
+
+                                          * Jackie at University of Kentucky PD, not being extremely tech-savvy, relies on the online chat and Wiki learning, finding the support system the "best seen so far".
+
+Western Kentucky University Police Department
+                                             * Ryan from Western Kentucky University Police Department: (On problems solved) "Some of the big problems that SAFE solved for us was the accountability. Also, it really helped us get in line with the accreditation standards. And, we got accredited." (On audit experience) "I really loved when the auditor came in… I gave him access to the vault and he went and pulled a piece of evidence and brought it to me. I was supposed to be able to tell him where it came from. And man, I just looked that right up. I said, 'That was on shelf…'"
+
+                                             * The interviewee is Ryan Petty, a Sergeant serving the Evidence Management Investigations unit.
+
+                                             * The department has twenty-five officers.
+
+                                             * Ryan has been in his current position with the investigations unit for about two and a half years (relative to the interview date), with WKU for seven years, and in law enforcement for 17 years. He was previously a patrol officer and then a Sergeant over a patrol shift.
+
+                                             * His position handles evidence retention and he is also over the Crime Scene Unit. He was exposed to evidence collection in the field before taking over managing evidence in storage.
+
+                                             * WKU PD implemented Tracker's SAFE software.
+
+                                             * There was minimal pushback from officers regarding using the auto disposition feature and the implementation of SAFE as a whole, partly because the system was new, making it easy to emphasize the importance of auto disposition.
+
+                                             * Ryan states that auto disposition has been a lifesaver for getting the old stuff out.
+
+                                             * He credits SAFE with solving big problems related to accountability.
+
+                                             * Using SAFE helped them get in line with and achieve accreditation standards (specifically mentioning an audit by the Kentucky Association of Chiefs of Police). During the audit, the auditor pulled a piece of evidence, and Ryan was able to easily look it up in the system.
+
+                                             * At Western Kentucky University Police Department, SAFE helped them get in line with accreditation standards and achieve accreditation. During their first audit, Ryan was able to quickly look up and provide the location of a piece of evidence the auditor pulled from the vault.
+
+General Information and Insights About Tracker Products SAFE System
+                                                * It is imperative to use state-of-the-art, evidence tracking software. However, not all evidence tracking software is equal.
+
+                                                * Tracker Products' SAFE software fit the needs of the Apple Valley Police Department in 2020.
+
+                                                * With the Apple Valley Police Department's use of SAFE, they can easily enter property and evidence, track it, and run more in-depth reports. This includes the ability to narrow research for specific case types such as sex assault kits, robbery cases, drug or murder cases. An effective system allows a better picture of what they have on a daily basis.
+
+                                                * Agencies talk to each other about changing their property and evidence management software.
+
+                                                * Auto Disposition is a feature of Tracker Products' SAFE software that sends a notification to the officer when cases come up for review; it is done electronically.
+
+                                                * The S.A.F.E. platform integrates software, mobile tools, and consulting for sustainable success. Many agencies use both the desktop and mobile functionality.
+
+                                                * Tracker has successful implementations for diverse agency sizes, from small departments like Hillview PD (18 officers) to large metropolitan agencies like Des Moines PD (300+ officers).
+
+                                                * Tracker's cloud infrastructure and automated tools are designed to manage evidence rooms with millions of items and are scalable for agencies of any size.
+
+                                                * Tracker supports large agencies like Las Vegas Metro PD, with over 1 million active pieces of evidence. It also serves medium-sized departments like Des Moines PD that process 750-800 items monthly.
+
+                                                * AWS-hosted infrastructure provides unlimited storage and computing power for scalability. Forest Park PD reported being only at 30% capacity after previously being at maximum.
+
+                                                * Tracker's S.A.F.E. system provides real-time reporting, customizable dashboards, and audit-ready documentation. Agencies can tailor reports to specific metrics (evidence growth, disposition rates, compliance audits). Live dashboards offer immediate insights. Audit-ready logs are automatically generated, detailed, and exportable.
+
+                                                * Tracker has served over 1,000 law enforcement clients, demonstrating expertise.
+
+                                                * Tailored features critical for law enforcement include automated chain-of-custody, evidence audits, and disposition tools.
+
+                                                * Built-in security and compliance measures ensure CJIS compliance. Secure cloud hosting is in CJIS-compliant data centers with 24/7 monitoring.
+
+                                                * Successful implementations with major law enforcement agencies (e.g., Las Vegas Metro PD) prove Tracker's capabilities.
+
+                                                * Tracker's partnership with the Evidence Management Institute provides additional expertise and training tailored to law enforcement.
+
+                                                * Tracker's automated disposition management is customizable to comply with specific jurisdictional laws.
+
+                                                * Tracker contracts are transparent with clear terms for support, upgrades, and termination.
+
+                                                * Tracker's work with agencies like Las Vegas Metro PD demonstrates its ability to scale effectively for large organizations. New partnerships expand its high-profile client list.
+
+                                                * Features like real-time dashboards and cross-agency integrations support multi-jurisdictional collaboration. Data sharing tools enable easy sharing with authorized external agencies.
+
+                                                * Clients like Frederick County, Maryland, have shared success stories about avoiding costly storage expansion through Tracker.
+
+                                                * Tracker's team handles data migration, configuration, and training to streamline implementation. Custom timelines fit agency workflows, and comprehensive testing is done before going live.
+
+                                                * Clear contracts outline data ownership and accessibility rights. Tracker supports smooth transitions for agencies choosing to move platforms.
+
+                                                * Tracker's cloud infrastructure ensures data remains secure and recoverable through backup systems and robust disaster recovery protocols. Data is backed up in real-time across multiple servers. Agencies can generate local backups. Tracker has maintained operations during outages for agencies with large inventories.
+
+                                                * Tracker combines advanced automation with a user-friendly design, delivering practical tools that reduce errors and improve efficiency without overwhelming users.
+
+                                                * User-friendly design includes customizable dashboards# Tracker Products SAFE System: Agency Experiences (Continued)
+
+Nappanee Police Department
+                                                   * Nik Havert from Nappanee Police Department: (On the old room) "We had so much stuff in that room. It was crazy. Plus, it needed some work. Like fumigation. We had some rodent problems. It was so gross; it was a massive project." (On high profile cases) "You're always told that with some of these high profile cases, you can't get rid of anything. You can never get rid of anything. Well, of course you can." (On the shoes) "there was a pair of shoes that were taken from a shooting victim at autopsy. They really had no evidentiary value, especially when mice have been through this bag and made a home. But the chief would say, It's from a homicide." (On auto disposition) "We do use the disposition. That was actually one of the first things that I set up. When I saw that feature, I was like, Oh, heck yes!" (On officers completing tasks) "The battle I have now is getting the guys to complete the task I send them for review like, Hey, do I still need to keep this?" (On COVID-19 impact) "due to COVID-19 – when a lot of our guys were stuck without much to do – I said, Hey, this is a great time to catch up on all those tasks I've sent you in Tracker. Some of them actually did go through with their tasks…" (On the duplicate feature) "The one that I use the most is the duplicate feature… That saves me so much time." "So that's a really good feature that I like."
+
+                                                   * Nik Havert is the representative, a detective and lead CSI.
+
+                                                   * Department has 15 full-time officers, 6 reserves, IT staff, and a secretary.
+
+                                                   * Most officers are road officers; there are two detectives (Nik is one) and another CSI who is also a road officer.
+
+                                                   * Serves a town of about 7,500 people, swelling to ~10,000 during the day due to manufacturing.
+
+                                                   * Nik has been with the department for 26 years (relative to the interview).
+
+                                                   * Was asked to take over CSI role, which appealed to his "love of puzzles".
+
+                                                   * Has been in the evidence management position for about five, possibly closing in on seven years (relative to the interview).
+
+                                                   * When he started in evidence, their tracking system was the old report management system (RMS).
+
+                                                   * The trickiest thing with adopting Tracker was giving officers permissions; links would expire if not used right away.
+
+                                                   * Some night-shifters didn't enter evidence for a month or more, causing link expirations.
+
+                                                   * They do use the disposition feature. It was one of the first things Nik set up because he saw the value.
+
+                                                   * The challenge now is getting officers to complete the tasks sent for review.
+
+                                                   * Due to COVID-19, some officers caught up on tasks, indicating what evidence to keep or dispose of.
+
+                                                   * They are now almost at the point of doing their annual evidence review/disposition (June-September) entirely in Tracker.
+
+                                                   * They still have old evidence in the old RMS to go through piece by piece.
+
+                                                   * For older cases, they can use Tracker to pull case numbers, types, suspect names, and cross-reference with court databases to determine if evidence can be pitched.
+
+                                                   * A standout feature Nik uses the most is the duplicate feature, which duplicates collection details (where, time, day, address, owner) for new items from the same case, saving significant time; he has shown other officers this feature.
+
+                                                   * The Nappanee evidence room was overwhelming, needed fumigation, and had rodent problems; it was "so gross" and a "massive project".
+
+                                                   * Nik recalls being told for high-profile cases "you can't get rid of anything," but he believes you can. He remembers a chief wanting to keep mouse-damaged shoes from a shooting victim because they were from a homicide, despite having no evidentiary value.
+
+                                                   * Nappanee PD does use auto disposition. It was one of the first things Nik set up because he saw the feature.
+
+                                                   * The current challenge for Nappanee PD is getting officers to complete tasks sent via Tracker for evidence review (e.g., "Hey, do I still need to keep this?"). Many officers forget. During COVID-19, when officers had less to do, Nik encouraged them to catch up on Tracker tasks, and some did.
+
+                                                   * The most used feature for Nik at Nappanee PD is the duplicate feature. He can duplicate an item and only change the description, saving time because it duplicates location, time, day, address, and owner.
+
+                                                   * Nik Havert at Nappanee PD inherited an overwhelming evidence room that needed fumigation and had rodent problems, describing it as "so gross". He faced challenges like keeping mouse-damaged shoes from a homicide case because the chief said so, illustrating the "you can
