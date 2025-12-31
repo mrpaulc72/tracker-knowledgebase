@@ -4,7 +4,7 @@ import { getSupabase } from '@/lib/supabase';
 
 export async function POST(req: Request) {
     try {
-        const { messages } = await req.json();
+        const { messages, mode } = await req.json();
         const lastMessage = messages[messages.length - 1].content;
 
         // Use lazy client initialization to prevent build errors
@@ -35,14 +35,25 @@ export async function POST(req: Request) {
             ?.map((doc: any) => `[Source: ${doc.metadata.source}]\n${doc.content}`)
             .join('\n\n---\n\n');
 
-        // 4. Send to OpenAI with context
-        const systemPrompt = `You are "Tracker Nexus AI", a highly efficient assistant for the Tracker Products team. 
+        // 4. Determine System Prompt based on Mode
+        let systemPrompt = `You are "Tracker Nexus AI", a highly efficient assistant for the Tracker Products team. 
 Use the following pieces of retrieved context to answer the user's question.
 If you don't know the answer based on the context, say that you don't know, but try to be as helpful as possible using the specialized internal knowledge provided.
 Always cite your sources using the [Source: filename] format.
 
 Context:
 ${contextText}`;
+
+        if (mode === 'roleplay') {
+            systemPrompt = `You are a skeptical, tough, but realistic prospect evaluating Tracker Products. 
+The user is a sales rep trying to alleviate your concerns.
+Use the context below to find REASONS to be skeptical or DETAILS to challenge them on, but do NOT simply repeat the context.
+Challenge the user. Be concise. Do not helpful. Make them earn your business.
+If the context contains a rebuttal, act AS IF you are the person claiming the objection that the rebuttal addresses.
+
+Context:
+${contextText}`;
+        }
 
         const response = await openai.chat.completions.create({
             model: 'gpt-4o',
