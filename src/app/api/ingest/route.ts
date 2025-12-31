@@ -3,13 +3,15 @@ import { IngestionService } from '@/lib/ingestion-service';
 
 export async function POST(req: Request) {
     try {
-        const { content, fileName } = await req.json();
+        const formData = await req.formData();
+        const file = formData.get('file') as File;
 
-        if (!content || !fileName) {
-            return NextResponse.json({ error: 'Missing content or fileName' }, { status: 400 });
+        if (!file) {
+            return NextResponse.json({ error: 'Missing file' }, { status: 400 });
         }
 
-        const result = await IngestionService.ingestDocument(content, fileName);
+        const buffer = Buffer.from(await file.arrayBuffer());
+        const result = await IngestionService.ingestDocument(buffer, file.name);
 
         if (result.success) {
             return NextResponse.json(result);
@@ -19,6 +21,6 @@ export async function POST(req: Request) {
 
     } catch (error: any) {
         console.error('[Ingest API] error:', error);
-        return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+        return NextResponse.json({ error: error.message || 'Internal server error' }, { status: 500 });
     }
 }

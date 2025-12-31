@@ -5,7 +5,7 @@ export function getOpenAIClient() {
   if (!apiKey) {
     // We throw only when the client is actually needed at runtime.
     // This allows the build process (which imports this module) to succeed.
-    throw new Error("Missing env.OPENAI_API_KEY");
+    throw new Error('OpenAI API Key is missing. If this is on Netlify, please add OPENAI_API_KEY to your Site Settings > Environment Variables.');
   }
   return new OpenAI({ apiKey });
 }

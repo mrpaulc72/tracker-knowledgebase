@@ -1,5 +1,7 @@
 import { getOpenAIClient } from './openai';
 import { getSupabaseAdmin } from './supabase';
+import mammoth from 'mammoth';
+import { PDFParse } from 'pdf-parse';
 
 export interface IngestionResult {
     success: boolean;
@@ -11,11 +13,32 @@ export interface IngestionResult {
 
 export class IngestionService {
     /**
-     * Automatically ingests, classifies, and embeds a document.
+     * Automatically ingests, classifies, and embeds a document from a Buffer.
      */
-    static async ingestDocument(content: string, fileName: string): Promise<IngestionResult> {
+    static async ingestDocument(buffer: Buffer, fileName: string): Promise<IngestionResult> {
         try {
             console.log(`[Ingestion] Starting process for ${fileName}...`);
+
+            const extension = fileName.split('.').pop()?.toLowerCase();
+            let content = '';
+
+            // 0. Extract text based on file type
+            if (extension === 'docx') {
+                const docResult = await mammoth.extractRawText({ buffer });
+                content = docResult.value;
+            } else if (extension === 'pdf') {
+                const parser = new PDFParse({ data: buffer });
+                const pdfResult = await parser.getText();
+                await parser.destroy();
+                content = pdfResult.text;
+            } else {
+                // Treat as text (txt, md, json, ts, js, etc.)
+                content = buffer.toString('utf-8');
+            }
+
+            if (!content || content.trim().length === 0) {
+                throw new Error('Could not extract any text from the document.');
+            }
 
             // Use lazy client initialization to prevent build errors
             const openai = getOpenAIClient();
@@ -66,14 +89,15 @@ export class IngestionService {
         const openai = getOpenAIClient();
         const prompt = `Analyze the following document content and provide a classification in JSON format.
 Include:
-- type: (e.g., "Case Study", "Product Manual", "SOP", "Avatar Info", "Objection Handling")
-- tags: Array of keywords (e.g., ["Cloud", "Security", "Law Enforcement"])
+- type: (e.g., "Case Study", "Product Manual", "SOP", "Avatar Info", "Objection Handling", "Source Code", "Configuration")
+- tags: Array of keywords (e.g., ["Cloud", "Security", "Law Enforcement", "React", "NodeJS"])
 - summary: A 1-sentence summary of the content.
 - priority: (1-5)
 
 Document Name: ${fileName}
-Content Snippet (first 2000 chars):
-${content.slice(0, 2000)}
+Extension: ${fileName.split('.').pop()?.toLowerCase()}
+Content Snippet (first 4000 chars):
+${content.slice(0, 4000)}
 
 Return ONLY valid JSON.`;
 

@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 tracker-knowledgebase-api-keys.txt
+
+# Local Netlify folder
+.netlify
