@@ -9,13 +9,21 @@ import { Badge } from '@/components/ui/badge';
 import { Search, Send, Bot, User, Loader2, BookOpen, ShieldCheck, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+
 interface Message {
     role: 'user' | 'assistant';
     content: string;
     sources?: string[];
 }
 
+const MODELS = [
+    { id: 'gpt-4o', label: 'GPT-4o (High Precision)' },
+    { id: 'gpt-4o-mini', label: 'GPT-4o Mini (Fast)' },
+];
+
 const QUICK_ACTIONS = [
+// ... (keep the same)
     {
         label: "SAFE Core Capabilities",
         question: "What are the core capabilities of the SAFE platform?",
@@ -83,24 +91,13 @@ export default function ChatInterface() {
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [quickActions, setQuickActions] = useState<typeof QUICK_ACTIONS>([]);
+    const [selectedModel, setSelectedModel] = useState('gpt-4o');
 
     useEffect(() => {
         // Randomly select 4 actions on mount
         const shuffled = [...QUICK_ACTIONS].sort(() => 0.5 - Math.random());
         setQuickActions(shuffled.slice(0, 4));
     }, []);
-
-    const handleQuickAction = (question: string) => {
-        setInput(question);
-        // We use a timeout to allow the state update to settle before "sending"
-        // But since handleSend reads from state 'input' which might not be updated yet in this closure,
-        // we'll pass the message directly to a modified sending logic or just auto-submit via effect.
-        // Easier approach: just call the API logic directly or queue it.
-        // Actually, let's just modify the state and let the user click send, OR pass the text to handleSend.
-        // The user requested "it should actually provide the information", implying auto-send.
-        // Let's refactor handleSend to accept an optional message.
-        submitMessage(question);
-    };
 
     const submitMessage = async (messageText: string) => {
         if (!messageText.trim() || isLoading) return;
@@ -114,16 +111,25 @@ export default function ChatInterface() {
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ messages: [...messages, userMessage] }),
+                body: JSON.stringify({ 
+                    messages: [...messages, userMessage],
+                    model: selectedModel
+                }),
             });
 
-            if (!response.ok) throw new Error('Failed to fetch response');
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Failed to fetch response');
+            }
 
             const data = await response.json();
             setMessages((prev) => [...prev, { role: 'assistant', content: data.content, sources: data.sources }]);
-        } catch (error) {
+        } catch (error: any) {
             console.error('Chat error:', error);
-            setMessages((prev) => [...prev, { role: 'assistant', content: 'Sorry, I encountered an error. Please check your connection and environment variables.' }]);
+            setMessages((prev) => [...prev, { 
+                role: 'assistant', 
+                content: `Error: ${error.message || 'I encountered an error. Please check your connection and environment variables.'}` 
+            }]);
         } finally {
             setIsLoading(false);
         }
@@ -133,26 +139,48 @@ export default function ChatInterface() {
         await submitMessage(input);
     };
 
+    const handleQuickAction = (question: string) => {
+        submitMessage(question);
+    };
+
     return (
-        <div className="flex flex-col w-full max-w-4xl mx-auto h-[70vh] gap-4">
+        <div className="flex flex-col w-full max-w-5xl mx-auto h-[75vh] min-h-[600px] gap-4">
             <Card className="flex-1 flex flex-col border-tracker-navy/10 overflow-hidden shadow-xl">
                 <CardHeader className="bg-tracker-navy text-white py-4">
-                    <CardTitle className="flex items-center gap-2 text-xl">
-                        <Bot className="w-6 h-6 text-tracker-blue" />
-                        Tracker Nexus AI
-                        <Badge variant="secondary" className="bg-tracker-blue/20 text-tracker-blue border-tracker-blue/30 ml-2">
-                            BETA
-                        </Badge>
-                    </CardTitle>
-                    <p className="text-sm text-tracker-blue/80 font-medium tracking-wide">
-                        Internal Knowledge Base & Strategy Assistant
-                    </p>
+                    <div className="flex items-center justify-between">
+                        <div className="flex flex-col">
+                            <CardTitle className="flex items-center gap-2 text-xl">
+                                <Bot className="w-6 h-6 text-tracker-blue" />
+                                Tracker Nexus AI
+                                <Badge variant="secondary" className="bg-tracker-blue/20 text-tracker-blue border-tracker-blue/30 ml-2">
+                                    BETA
+                                </Badge>
+                            </CardTitle>
+                            <p className="text-xs text-tracker-blue/80 font-medium tracking-wide mt-1">
+                                Internal Knowledge Base & Strategy Assistant
+                            </p>
+                        </div>
+                        <div className="w-[200px]">
+                            <Select value={selectedModel} onValueChange={setSelectedModel}>
+                                <SelectTrigger className="bg-white/10 border-white/20 text-white text-xs h-8">
+                                    <SelectValue placeholder="Model" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    {MODELS.map(m => (
+                                        <SelectItem key={m.id} value={m.id} className="text-xs">
+                                            {m.label}
+                                        </SelectItem>
+                                    ))}
+                                </SelectContent>
+                            </Select>
+                        </div>
+                    </div>
                 </CardHeader>
 
                 <ScrollArea className="flex-1 p-4 bg-zinc-50/50">
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-6 min-h-full">
                         {messages.length === 0 && (
-                            <div className="flex flex-col items-center justify-center h-[50vh] text-center space-y-6">
+                            <div className="flex flex-col items-center justify-center py-12 text-center space-y-6">
                                 <div className="p-4 rounded-full bg-tracker-navy/5 text-tracker-navy">
                                     <Search className="w-12 h-12 opacity-20" />
                                 </div>

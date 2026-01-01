@@ -40,6 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 tracker-knowledgebase-api-keys.txt
+tracker-knowledge base-API keys.txt
+Debugging Ingestion Failures 12.31.25.md
 
 # Local Netlify folder
 .netlify

@@ -28,9 +28,6 @@ interface QueuedFile {
 export default function KnowledgeFactory() {
     const [queue, setQueue] = useState<QueuedFile[]>([]);
     const [isIngesting, setIsIngesting] = useState(false);
-    const [envStatus, setEnvStatus] = useState({
-        supabase: !!(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY),
-    });
     const fileInputRef = useRef<HTMLInputElement>(null);
     const folderInputRef = useRef<HTMLInputElement>(null);
 
@@ -38,10 +35,15 @@ export default function KnowledgeFactory() {
     const addFilesToQueue = (files: FileList | File[]) => {
         const fileArray = Array.from(files);
         const filteredFiles = fileArray.filter(file => {
-            // Ignore system files like .DS_Store, thumbs.db, etc.
             if (file.name.startsWith('.') || file.name.toLowerCase() === 'thumbs.db') return false;
             // Ignore empty files
             if (file.size === 0) return false;
+            // NEW: Ignore files larger than 4.5MB (Netlify/Vercel Serverless Function body limit)
+            if (file.size > 4.5 * 1024 * 1024) {
+                console.warn(`Skipping ${file.name} because it exceeds 4.5MB limit.`);
+                // Ideally we'd notify the user, but for now we filter it out to prevent crash.
+                return false;
+            }
             return true;
         });
 
@@ -99,10 +101,20 @@ export default function KnowledgeFactory() {
                     body: formData,
                 });
 
-                const data = await response.json();
+                let data;
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.includes('application/json')) {
+                    data = await response.json();
+                } else {
+                    // If not JSON, it's likely an HTML error page (timeout, 413, 500)
+                    const text = await response.text();
+                    console.error('Non-JSON response:', text.slice(0, 500)); 
+                    const statusText = response.status === 504 ? 'Gateway Timeout' : `Status ${response.status}`;
+                    throw new Error(`Server Error (${statusText}): The file processing failed at the infrastructure level. Check Netlify logs.`);
+                }
 
                 if (!response.ok) {
-                    throw new Error(data.error || 'Ingestion failed');
+                    throw new Error(data.error || data.details || 'Ingestion failed');
                 }
 
                 setQueue(prev => prev.map(f => f.id === queuedFile.id ? {
@@ -138,16 +150,6 @@ export default function KnowledgeFactory() {
 
     return (
         <div className="w-full max-w-5xl mx-auto space-y-6">
-            {!envStatus.supabase && (
-                <div className="bg-destructive/10 border border-destructive/20 rounded-xl p-4 flex items-center gap-4 text-destructive">
-                    <Database className="w-5 h-5 shrink-0" />
-                    <div className="text-xs">
-                        <p className="font-bold">Supabase Environment Error</p>
-                        <p className="opacity-80">Public environment variables are missing. Please add <code>NEXT_PUBLIC_SUPABASE_URL</code> and <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code> to Netlify Site Settings.</p>
-                    </div>
-                </div>
-            )}
-
             <Card className="border-tracker-navy/10 shadow-lg overflow-hidden flex flex-col min-h-[600px]">
                 <CardHeader className="bg-tracker-navy/5 border-b border-tracker-navy/5">
                     <div className="flex items-center justify-between">
@@ -339,7 +341,7 @@ export default function KnowledgeFactory() {
                         )}
                         <Button
                             onClick={handleIngestAll}
-                            disabled={pendingCount === 0 || isIngesting || !envStatus.supabase}
+                            disabled={pendingCount === 0 || isIngesting}
                             className="bg-tracker-navy hover:bg-tracker-navy/90 text-white gap-2 px-8 min-w-[160px] h-10 shadow-md shadow-tracker-navy/20"
                         >
                             {isIngesting ? (

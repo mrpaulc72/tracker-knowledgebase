@@ -1,6 +1,6 @@
 import ChatInterface from "@/components/ChatInterface";
 import KnowledgeFactory from "@/components/KnowledgeFactory";
-import ObjectionCrusher from "@/components/ObjectionCrusher";
+import OpsManual from '@/components/OpsManual';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 
@@ -60,25 +60,34 @@ export default function Home() {
           <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-tracker-red/5 blur-3xl" />
 
           <Tabs defaultValue="war-room" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto mb-8 bg-zinc-100/50 p-1 border border-tracker-navy/10 rounded-xl">
-              <TabsTrigger value="war-room" className="rounded-lg data-[state=active]:bg-tracker-navy data-[state=active]:text-white transition-all uppercase text-[10px] font-bold tracking-widest py-2">
+            <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto mb-8 bg-zinc-100/50 p-1 border border-tracker-navy/10 rounded-xl">
+              <TabsTrigger
+                value="war-room"
+                className="rounded-lg data-[state=active]:bg-white data-[state=active]:text-tracker-navy data-[state=active]:shadow-sm transition-all"
+              >
                 The War Room
               </TabsTrigger>
-              <TabsTrigger value="objection-crusher" className="rounded-lg data-[state=active]:bg-tracker-navy data-[state=active]:text-white transition-all uppercase text-[10px] font-bold tracking-widest py-2">
-                Objection Crusher
-              </TabsTrigger>
-              <TabsTrigger value="knowledge-factory" className="rounded-lg data-[state=active]:bg-tracker-navy data-[state=active]:text-white transition-all uppercase text-[10px] font-bold tracking-widest py-2">
+              <TabsTrigger
+                value="knowledge-factory"
+                className="rounded-lg data-[state=active]:bg-white data-[state=active]:text-tracker-navy data-[state=active]:shadow-sm transition-all"
+              >
                 Knowledge Factory
               </TabsTrigger>
+              <TabsTrigger
+                value="ops-manual"
+                className="rounded-lg data-[state=active]:bg-white data-[state=active]:text-tracker-navy data-[state=active]:shadow-sm transition-all"
+              >
+                Ops Manual
+              </TabsTrigger>
             </TabsList>
-            <TabsContent value="war-room" className="animate-in fade-in duration-500">
+            <TabsContent value="war-room" className="animate-in fade-in slide-in-from-bottom-4 duration-500">
               <ChatInterface />
             </TabsContent>
-            <TabsContent value="objection-crusher" className="animate-in fade-in duration-500">
-              <ObjectionCrusher />
-            </TabsContent>
-            <TabsContent value="knowledge-factory" className="animate-in fade-in duration-500">
+            <TabsContent value="knowledge-factory" className="animate-in fade-in slide-in-from-bottom-4 duration-500">
               <KnowledgeFactory />
+            </TabsContent>
+            <TabsContent value="ops-manual" className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+              <OpsManual />
             </TabsContent>
           </Tabs>
         </section>

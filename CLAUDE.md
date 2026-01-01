@@ -9,7 +9,8 @@
 ## Tech Stack
 - Frontend: Next.js 15 (App Router), React 19, Tailwind CSS 4, shadcn/ui, Lucide React
 - Backend/DB: Supabase (PostgreSQL + pgvector)
-- AI: OpenAI SDK (GPT-4o)
+- AI: OpenAI SDK (GPT-4o/mini), Groq SDK (Llama/Mixtral)
+- PDF/Word: mammoth, pdf-parse
 - Auth: Supabase Auth (@trackerproducts.com domain restriction)
 
 ## Brand Identity

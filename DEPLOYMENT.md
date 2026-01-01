@@ -9,6 +9,7 @@ Before deploying, you **MUST** add your API keys to the Netlify Dashboard:
 1.  Go to **Site Configuration > Environment variables**.
 2.  Add:
     *   `OPENAI_API_KEY`
+    *   `GROQ_API_KEY` (Optional)
     *   `NEXT_PUBLIC_SUPABASE_URL`
     *   `NEXT_PUBLIC_SUPABASE_ANON_KEY`
     *   `SUPABASE_SERVICE_ROLE_KEY`
