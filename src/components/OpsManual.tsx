@@ -58,6 +58,7 @@ export default function OpsManual() {
     const [sops, setSops] = useState<any[]>([]);
     const [selectedSop, setSelectedSop] = useState<any | null>(null);
     const [searchQuery, setSearchQuery] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
     const [supabase, setSupabase] = useState<any>(null);
 
     useEffect(() => {
@@ -65,6 +66,8 @@ export default function OpsManual() {
         setSupabase(client);
         if (client) {
             fetchSops(client);
+        } else {
+            setIsLoading(false);
         }
     }, []);
 
