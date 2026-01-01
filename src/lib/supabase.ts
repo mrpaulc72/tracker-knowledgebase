@@ -5,7 +5,10 @@ export function getSupabase() {
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   if (!url || !key) {
-    throw new Error('Supabase URL or Anon Key is missing. If this is on Netlify, please add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to your Site Settings > Environment Variables.');
+    // Return null instead of throwing to prevent build-time crashes.
+    // The UI should handle the null state gracefully.
+    console.warn('Supabase URL or Anon Key is missing. Environment variables must be set.');
+    return null as any;
   }
 
   return createClient(url, key);
@@ -16,7 +19,7 @@ export function getSupabaseAdmin() {
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!url || !serviceRoleKey) {
-    throw new Error('Supabase URL or Service Role Key is missing. If this is on Netlify, please add NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY to your Site Settings > Environment Variables.');
+    throw new Error('Supabase Admin: Service Role Key or URL is missing.');
   }
 
   return createClient(url, serviceRoleKey);

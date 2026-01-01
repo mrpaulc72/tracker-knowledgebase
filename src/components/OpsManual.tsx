@@ -58,25 +58,29 @@ export default function OpsManual() {
     const [sops, setSops] = useState<any[]>([]);
     const [selectedSop, setSelectedSop] = useState<any | null>(null);
     const [searchQuery, setSearchQuery] = useState('');
-    const [isLoading, setIsLoading] = useState(true);
-    const [supabase] = useState(() => getSupabase());
+    const [supabase, setSupabase] = useState<any>(null);
 
     useEffect(() => {
-        fetchSops();
+        const client = getSupabase();
+        setSupabase(client);
+        if (client) {
+            fetchSops(client);
+        }
     }, []);
 
-    const fetchSops = async () => {
+    const fetchSops = async (client: any) => {
+        if (!client) return;
         setIsLoading(true);
         try {
             // Fetch all documents. We'll filter for SOPs in-memory for better flexibility with case-sensitivity
-            const { data, error } = await supabase
+            const { data, error } = await client
                 .from('documents')
                 .select('*');
 
             if (error) throw error;
             
             // Filter for type === 'sop' or 'SOP'
-            const sopData = (data || []).filter(doc => 
+            const sopData = (data || []).filter((doc: any) => 
                 doc.metadata?.type?.toLowerCase() === 'sop'
             );
             
@@ -94,27 +98,22 @@ export default function OpsManual() {
     };
 
     const seedMockData = async () => {
+        if (!supabase) {
+            alert('Supabase client not initialized. Check environment variables.');
+            return;
+        }
         setIsLoading(true);
         try {
-            // Insert mock SOPs
-            // In a real app we'd use the ingestion service, but here we just direct insert for UI testing
-            // We need to fetch embedding/hash usually, but for a pure UI test we might skip embedding
-            // providing a dummy embedding to satisfy constraint if exists, or relying on partial insert?
-            // Actually, `documents` table likely requires embedding. 
-            // Let's rely on the fact that for *reading* we don't need the embedding.
-            // But the database constraint might fail if query_embedding is part of a non-null check?
-            // Let's try basic insert. If it fails due to embedding, we'll auto-generate a dummy one.
-
             const dummyEmbedding = new Array(1536).fill(0.01);
 
             for (const doc of MOCK_SOPS) {
                 await supabase.from('documents').insert({
                     content: doc.content,
                     metadata: doc.metadata,
-                    embedding: dummyEmbedding // Required by vector column usually
+                    embedding: dummyEmbedding
                 });
             }
-            await fetchSops();
+            await fetchSops(supabase);
             alert('Mock SOPs seeded!');
         } catch (err) {
             console.error('Error seeding data:', err);
