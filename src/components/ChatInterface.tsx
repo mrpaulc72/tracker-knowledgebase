@@ -18,8 +18,10 @@ interface Message {
 }
 
 const MODELS = [
-    { id: 'gpt-4o', label: 'GPT-4o (High Precision)' },
-    { id: 'gpt-4o-mini', label: 'GPT-4o Mini (Fast)' },
+    { id: 'gpt-4o', label: 'GPT-4o (OpenAI)' },
+    { id: 'gpt-4o-mini', label: 'GPT-4o Mini (OpenAI)' },
+    { id: 'llama-3.3-70b-versatile', label: 'Llama 3.3 70B (Groq)' },
+    { id: 'mixtral-8x7b-32768', label: 'Mixtral 8x7B (Groq)' },
 ];
 
 const QUICK_ACTIONS = [

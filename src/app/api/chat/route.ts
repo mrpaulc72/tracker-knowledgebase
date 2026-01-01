@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getOpenAIClient } from '@/lib/openai';
+import { getGroqClient } from '@/lib/groq';
 import { getSupabase } from '@/lib/supabase';
 
 export const maxDuration = 60; // Allow up to 60 seconds
@@ -48,17 +49,31 @@ Always cite your sources using the [Source: filename] format.
 Context:
 ${contextText}`;
 
-        // Use OpenAI
-        const response = await openai.chat.completions.create({
-            model: model, // 'gpt-4o' or 'gpt-4o-mini'
-            messages: [
-                { role: 'system', content: systemPrompt },
-                ...messages
-            ],
-            temperature: 0.5,
-        });
-        
-        const content = response.choices[0]?.message?.content || '';
+        let content = '';
+        if (model.startsWith('llama') || model.startsWith('mixtral') || model.startsWith('gemma')) {
+            // Use Groq
+            const groq = getGroqClient();
+            const response = await groq.chat.completions.create({
+                model: model,
+                messages: [
+                    { role: 'system', content: systemPrompt },
+                    ...messages
+                ],
+                temperature: 0.5,
+            });
+            content = response.choices[0]?.message?.content || '';
+        } else {
+            // Use OpenAI
+            const response = await openai.chat.completions.create({
+                model: model, // 'gpt-4o' or 'gpt-4o-mini'
+                messages: [
+                    { role: 'system', content: systemPrompt },
+                    ...messages
+                ],
+                temperature: 0.5,
+            });
+            content = response.choices[0]?.message?.content || '';
+        }
 
         return NextResponse.json({
             content,
