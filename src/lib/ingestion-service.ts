@@ -1,6 +1,5 @@
 import { getOpenAIClient } from './openai';
 import { getSupabaseAdmin } from './supabase';
-import mammoth from 'mammoth';
 
 export interface IngestionResult {
     success: boolean;
@@ -24,11 +23,13 @@ export class IngestionService {
             // 0. Extract text based on file type
             try {
                 if (extension === 'docx') {
+                    console.log(`[Ingestion] Loading mammoth dynamically...`);
+                    const mammoth = await import('mammoth');
                     console.log(`[Ingestion] Extracting DOCX via mammoth...`);
                     const docResult = await mammoth.extractRawText({ buffer });
                     text = docResult.value;
                 } else if (extension === 'pdf') {
-                    console.log(`[Ingestion] Extracting PDF...`);
+                    console.log(`[Ingestion] Loading pdf-parse dynamically...`);
                     // Dynamically import pdf-parse to avoid crash if it's missing or broken
                     const { PDFParse } = await import('pdf-parse');
                     const parser = new (PDFParse as any)({ data: buffer });
