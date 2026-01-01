@@ -40,7 +40,7 @@ export default function Home() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-tracker-blue"></span>
             </span>
             <span className="text-[10px] font-bold uppercase tracking-wider text-tracker-navy/80">
-              Active Intelligence: v1.0.4
+              Active Intelligence: v1.0.5
             </span>
           </div>
 
