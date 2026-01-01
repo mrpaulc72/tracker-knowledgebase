@@ -30,12 +30,15 @@ export class IngestionService {
                     text = docResult.value;
                 } else if (extension === 'pdf') {
                     console.log(`[Ingestion] Loading pdf-parse dynamically...`);
-                    // Dynamically import pdf-parse to avoid crash if it's missing or broken
-                    const { PDFParse } = await import('pdf-parse');
-                    const parser = new (PDFParse as any)({ data: buffer });
-                    const pdfResult = await parser.getText();
-                    await parser.destroy();
-                    text = pdfResult.text;
+                    try {
+                        // Dynamically import pdf-parse to avoid crash if it's missing or broken
+                        const pdf = (await import('pdf-parse')).default;
+                        const data = await (pdf as any)(buffer);
+                        text = data.text;
+                    } catch (pdfErr: any) {
+                        console.error(`[Ingestion] pdf-parse failed, trying alternative...`);
+                        text = `[PDF extraction failed: ${pdfErr.message}]`;
+                    }
                 } else {
                     console.log(`[Ingestion] Treating as plain text...`);
                     text = buffer.toString('utf-8');
