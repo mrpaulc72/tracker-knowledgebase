@@ -81,15 +81,23 @@ export class IngestionService {
                 } else if (extension === 'pdf') {
                     console.log(`[Ingestion] Extracting PDF...`);
                     try {
-                        const { PDFParse } = await import('pdf-parse');
-                        const parser = new (PDFParse as any)({ data: buffer });
-                        const pdfResult = await parser.getText();
-                        await parser.destroy();
+                        // Correct pdf-parse usage: it's a default export function
+                        const pdf = (await import('pdf-parse')).default;
+                        const pdfResult = await pdf(buffer);
                         text = pdfResult.text;
+
+                        if (!text || text.trim().length < 5) {
+                            console.log(`[Ingestion] PDF text extraction yielded very little content. Treating as reference/image PDF.`);
+                            isMedia = true;
+                            text = `PDF Document (Reference): ${fileName}. Content appears to be image-based or protected. Use the link to view the original file.`;
+                        }
                     } catch (pdfErr: any) {
                         console.error(`[Ingestion] PDF extraction failed:`, pdfErr);
-                        throw new Error(`PDF parse error: ${pdfErr.message}`);
+                        // Strategic Fallback: Instead of throwing, we treat it as a media/reference file
+                        isMedia = true;
+                        text = `PDF Document (Reference): ${fileName}. Note: Automated text extraction failed (${pdfErr.message}). You can still access this file via the direct link in citations.`;
                     }
+
                 } else if (spreadsheetExtensions.includes(extension)) {
                     console.log(`[Ingestion] Extracting Spreadsheet...`);
                     const XLSX = await import('xlsx');
@@ -117,8 +125,11 @@ export class IngestionService {
                 }
             } catch (extError: any) {
                 console.error(`[Ingestion] Text extraction failed for ${fileName}:`, extError);
-                throw new Error(`Failed to extract text: ${extError.message}`);
+                // Final safety net: If anything crashes during extraction, don't block the whole upload
+                isMedia = true;
+                text = `Reference asset: ${fileName}. Support for this file type is limited or the file is corrupted. Content: ${extError.message}`;
             }
+
 
 
             if (!isMedia && (!text || text.trim().length === 0)) {
