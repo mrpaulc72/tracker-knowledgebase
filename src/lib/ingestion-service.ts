@@ -37,14 +37,49 @@ export class IngestionService {
 
             // 0. Extract text based on file type
             try {
-                if (extension === 'docx') {
-                    console.log(`[Ingestion] Loading mammoth dynamically...`);
+                const textExtensions = [
+                    'txt', 'md', 'mdx', 'json', 'yaml', 'yml', 'xml', 'html', 'htm', 'xhtml',
+                    'css', 'js', 'jsx', 'ts', 'tsx', 'py', 'rb', 'php', 'sh', 'sql', 'java',
+                    'cpp', 'c', 'h', 'cs', 'rs', 'go', 'kt', 'env', 'ini', 'cfg', 'conf', 'log',
+                    'rtf', 'tex', 'rst', 'srt', 'vtt', 'sub', 'sbv', 'nfo', 'asc', 'sig'
+                ];
+
+                const imageExtensions = [
+                    'jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'heic', 'svg', 'ico', 'icns',
+                    'cur', 'tif', 'tiff', 'eps', 'ai', 'ps', 'cdr', 'emf', 'wmf'
+                ];
+
+                const mediaExtensions = [
+                    'mp4', 'm4v', 'mov', 'avi', 'wmv', 'mkv', 'webm', 'flv', 'mpeg', 'mpg',
+                    'ogv', '3gp', '3g2', 'mts', 'm2ts', 'vob', 'mp3', 'wav', 'aac', 'm4a',
+                    'flac', 'ogg', 'oga', 'wma', 'aif', 'aiff', 'opus'
+                ];
+
+                const spreadsheetExtensions = ['xlsx', 'xls', 'xlsm', 'xltx', 'ods', 'csv', 'tsv', 'psv'];
+
+                const documentExtensions = ['docx', 'dotx', 'doc', 'dot', 'odt', 'ott', 'pages', 'rtf'];
+
+                const presentationExtensions = ['pptx', 'ppt', 'pps', 'ppsx', 'odp', 'key'];
+
+                const archiveExtensions = ['zip', 'rar', '7z', 'tar', 'gz', 'tgz', 'bz2', 'xz', 'iso', 'img', 'dmg'];
+
+                const projectExtensions = [
+                    'psd', 'psb', 'indd', 'indm', 'idml', 'prproj', 'aep', 'aepx', 'sesx', 'fla', 'swf',
+                    'dwg', 'dxf', 'step', 'stp', 'stl', 'obj', 'blend', 'skp', 'fbx', 'max', '3ds'
+                ];
+
+                if (documentExtensions.includes(extension)) {
+                    console.log(`[Ingestion] Loading mammoth dynamically for ${extension}...`);
                     const mammoth = await import('mammoth');
-                    console.log(`[Ingestion] Extracting DOCX via mammoth...`);
-                    const docResult = await mammoth.extractRawText({ buffer });
-                    text = docResult.value;
+                    try {
+                        const docResult = await mammoth.extractRawText({ buffer });
+                        text = docResult.value;
+                    } catch (mErr) {
+                        console.warn(`[Ingestion] Mammoth failed for ${extension}, trying text fallback`);
+                        text = buffer.toString('utf-8');
+                    }
                 } else if (extension === 'pdf') {
-                    console.log(`[Ingestion] Loading pdf-parse dynamically...`);
+                    console.log(`[Ingestion] Extracting PDF...`);
                     try {
                         const { PDFParse } = await import('pdf-parse');
                         const parser = new (PDFParse as any)({ data: buffer });
@@ -55,24 +90,29 @@ export class IngestionService {
                         console.error(`[Ingestion] PDF extraction failed:`, pdfErr);
                         throw new Error(`PDF parse error: ${pdfErr.message}`);
                     }
-                } else if (['xlsx', 'xls', 'csv'].includes(extension)) {
-                    console.log(`[Ingestion] Loading xlsx dynamically...`);
+                } else if (spreadsheetExtensions.includes(extension)) {
+                    console.log(`[Ingestion] Extracting Spreadsheet...`);
                     const XLSX = await import('xlsx');
                     const workbook = XLSX.read(buffer, { type: 'buffer' });
-                    // Extract text from all sheets
                     workbook.SheetNames.forEach(sheetName => {
                         const sheet = workbook.Sheets[sheetName];
                         text += `\n--- Sheet: ${sheetName} ---\n`;
                         text += XLSX.utils.sheet_to_csv(sheet);
                     });
-                } else if (['png', 'jpg', 'jpeg', 'gif', 'webp'].includes(extension)) {
+                } else if (imageExtensions.includes(extension)) {
                     isMedia = true;
-                    text = `Image file: ${fileName}. Use the attached URL to view.`;
-                } else if (['mp4', 'wav', 'mov', 'mp3'].includes(extension)) {
+                    text = `Image file: ${fileName}. Use the linked asset to view. Description: ${extension.toUpperCase()} graphic.`;
+                } else if (mediaExtensions.includes(extension)) {
                     isMedia = true;
-                    text = `Media file (${extension}): ${fileName}. Use the attached URL to access.`;
+                    text = `Audio/Video file: ${fileName}. Use the linked asset to play. Format: ${extension.toUpperCase()}.`;
+                } else if (textExtensions.includes(extension)) {
+                    console.log(`[Ingestion] Reading as text...`);
+                    text = buffer.toString('utf-8');
+                } else if (archiveExtensions.includes(extension) || projectExtensions.includes(extension)) {
+                    isMedia = true;
+                    text = `Reference/Archive file: ${fileName}. Format: ${extension.toUpperCase()}. Stored for download and metadata lookup.`;
                 } else {
-                    console.log(`[Ingestion] Treating as plain text...`);
+                    console.log(`[Ingestion] Defaulting to text for unknown extension: ${extension}`);
                     text = buffer.toString('utf-8');
                 }
             } catch (extError: any) {
@@ -80,15 +120,22 @@ export class IngestionService {
                 throw new Error(`Failed to extract text: ${extError.message}`);
             }
 
+
             if (!isMedia && (!text || text.trim().length === 0)) {
                 throw new Error('Document appears to be empty or could not be read.');
             }
 
-            // 1. Upload to Supabase Storage if it's a "displayable" file (PDF, Image, Media)
+            // 1. Upload to Supabase Storage if it's a "displayable" or "reference" file
             let storageUrl = undefined;
-            const displayableTypes = ['pdf', 'png', 'jpg', 'jpeg', 'gif', 'webp', 'mp4', 'wav', 'mov', 'mp3'];
+            const storableTypes = [
+                'pdf', 'png', 'jpg', 'jpeg', 'gif', 'webp', 'mp4', 'wav', 'mov', 'mp3',
+                'docx', 'xlsx', 'csv', 'pptx', 'zip', 'rar', '7z', 'psd', 'ai', 'dwg', 'dxf',
+                'stl', 'obj', 'blend', 'heic', 'svg', 'ico', 'm4v', 'avi', 'wmv', 'mkv', 'webm',
+                'exe', 'dmg', 'pkg', 'apk'
+            ];
 
-            if (displayableTypes.includes(extension)) {
+            if (storableTypes.includes(extension) || isMedia) {
+
                 try {
                     const supabase = getSupabaseAdmin();
                     await supabase.storage.createBucket('document-previews', { public: true }).catch(() => { });
@@ -160,8 +207,10 @@ export class IngestionService {
                         source: fileName,
                         chunkIndex: i,
                         fileUrl: storageUrl,
-                        type: isMedia ? (['mp4', 'mov', 'wav', 'mp3'].includes(extension) ? 'Media' : 'Image') : classification.type
+                        type: isMedia ? 'Media' : classification.type,
+                        extension: extension
                     },
+
                     embedding: embeddings[i]
                 }));
 
@@ -304,17 +353,66 @@ Return ONLY valid JSON.`;
 
     private static getMimeType(extension: string): string {
         const mimes: Record<string, string> = {
+            // Documents
             'pdf': 'application/pdf',
+            'doc': 'application/msword',
+            'docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'xls': 'application/vnd.ms-excel',
+            'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'ppt': 'application/vnd.ms-powerpoint',
+            'pptx': 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+            'odt': 'application/vnd.oasis.opendocument.text',
+            'ods': 'application/vnd.oasis.opendocument.spreadsheet',
+            'odp': 'application/vnd.oasis.opendocument.presentation',
+            'csv': 'text/csv',
+            'tsv': 'text/tab-separated-values',
+            'txt': 'text/plain',
+            'md': 'text/markdown',
+            'json': 'application/json',
+            'xml': 'application/xml',
+
+            // Images
             'png': 'image/png',
             'jpg': 'image/jpeg',
             'jpeg': 'image/jpeg',
             'gif': 'image/gif',
             'webp': 'image/webp',
-            'mp4': 'video/mp4',
+            'svg': 'image/svg+xml',
+            'ico': 'image/x-icon',
+            'heic': 'image/heic',
+            'tif': 'image/tiff',
+            'tiff': 'image/tiff',
+            'bmp': 'image/bmp',
+
+            // Audio
+            'mp3': 'audio/mpeg',
             'wav': 'audio/wav',
+            'm4a': 'audio/mp4',
+            'aac': 'audio/aac',
+            'oga': 'audio/ogg',
+            'flac': 'audio/flac',
+
+            // Video
+            'mp4': 'video/mp4',
             'mov': 'video/quicktime',
-            'mp3': 'audio/mpeg'
+            'm4v': 'video/x-m4v',
+            'avi': 'video/x-msvideo',
+            'wmv': 'video/x-ms-wmv',
+            'mkv': 'video/x-matroska',
+            'webm': 'video/webm',
+
+            // Archives
+            'zip': 'application/zip',
+            'rar': 'application/x-rar-compressed',
+            '7z': 'application/x-7z-compressed',
+            'tar': 'application/x-tar',
+
+            // Project Files
+            'psd': 'image/vnd.adobe.photoshop',
+            'dwg': 'image/vnd.dwg',
+            'skp': 'application/vnd.sketchup.skp'
         };
         return mimes[extension] || 'application/octet-stream';
     }
 }
+

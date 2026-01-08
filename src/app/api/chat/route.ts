@@ -80,8 +80,11 @@ ${contextText}`;
             sources: documents?.map((doc: any) => ({
                 name: doc.metadata.source,
                 fileUrl: doc.metadata.fileUrl,
-                url: doc.metadata.url
+                url: doc.metadata.url,
+                type: doc.metadata.type,
+                extension: doc.metadata.extension
             })) || []
+
         });
 
     } catch (error: any) {

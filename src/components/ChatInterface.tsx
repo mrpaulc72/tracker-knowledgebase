@@ -18,7 +18,10 @@ interface Message {
         name: string;
         fileUrl?: string;
         url?: string;
+        type?: string;
+        extension?: string;
     }[];
+
 }
 
 const MODELS = [
@@ -249,10 +252,17 @@ export default function ChatInterface() {
                                                         className="h-6 px-2 text-[9px] font-bold text-tracker-navy bg-white border border-tracker-navy/10 hover:bg-tracker-navy/5 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
                                                     >
                                                         <a href={s.fileUrl || s.url} target="_blank" rel="noopener noreferrer">
-                                                            {s.fileUrl ? 'VIEW PDF' : 'WATCH'}
+                                                            {(() => {
+                                                                if (s.url) return 'WATCH';
+                                                                if (s.type === 'Media') return 'WATCH';
+                                                                if (['png', 'jpg', 'jpeg', 'gif', 'webp', 'heic', 'svg'].includes(s.extension || '')) return 'VIEW';
+                                                                if (s.extension === 'pdf') return 'VIEW PDF';
+                                                                return 'OPEN';
+                                                            })()}
                                                             <ExternalLink className="w-2 h-2 ml-1" />
                                                         </a>
                                                     </Button>
+
                                                 )}
                                             </div>
                                         ))}
