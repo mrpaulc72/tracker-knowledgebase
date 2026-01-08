@@ -31,8 +31,9 @@ export class IngestionService {
                 };
             }
 
-            const extension = fileName.split('.').pop()?.toLowerCase();
+            const extension = fileName.split('.').pop()?.toLowerCase() || '';
             let text = '';
+            let isMedia = false;
 
             // 0. Extract text based on file type
             try {
@@ -45,7 +46,6 @@ export class IngestionService {
                 } else if (extension === 'pdf') {
                     console.log(`[Ingestion] Loading pdf-parse dynamically...`);
                     try {
-                        // Dynamically import pdf-parse
                         const { PDFParse } = await import('pdf-parse');
                         const parser = new (PDFParse as any)({ data: buffer });
                         const pdfResult = await parser.getText();
@@ -55,6 +55,22 @@ export class IngestionService {
                         console.error(`[Ingestion] PDF extraction failed:`, pdfErr);
                         throw new Error(`PDF parse error: ${pdfErr.message}`);
                     }
+                } else if (['xlsx', 'xls', 'csv'].includes(extension)) {
+                    console.log(`[Ingestion] Loading xlsx dynamically...`);
+                    const XLSX = await import('xlsx');
+                    const workbook = XLSX.read(buffer, { type: 'buffer' });
+                    // Extract text from all sheets
+                    workbook.SheetNames.forEach(sheetName => {
+                        const sheet = workbook.Sheets[sheetName];
+                        text += `\n--- Sheet: ${sheetName} ---\n`;
+                        text += XLSX.utils.sheet_to_csv(sheet);
+                    });
+                } else if (['png', 'jpg', 'jpeg', 'gif', 'webp'].includes(extension)) {
+                    isMedia = true;
+                    text = `Image file: ${fileName}. Use the attached URL to view.`;
+                } else if (['mp4', 'wav', 'mov', 'mp3'].includes(extension)) {
+                    isMedia = true;
+                    text = `Media file (${extension}): ${fileName}. Use the attached URL to access.`;
                 } else {
                     console.log(`[Ingestion] Treating as plain text...`);
                     text = buffer.toString('utf-8');
@@ -64,34 +80,35 @@ export class IngestionService {
                 throw new Error(`Failed to extract text: ${extError.message}`);
             }
 
-            if (!text || text.trim().length === 0) {
+            if (!isMedia && (!text || text.trim().length === 0)) {
                 throw new Error('Document appears to be empty or could not be read.');
             }
 
-            // 1. Upload to Supabase Storage if it's a PDF for high-fidelity viewing
+            // 1. Upload to Supabase Storage if it's a "displayable" file (PDF, Image, Media)
             let storageUrl = undefined;
-            if (extension === 'pdf') {
+            const displayableTypes = ['pdf', 'png', 'jpg', 'jpeg', 'gif', 'webp', 'mp4', 'wav', 'mov', 'mp3'];
+
+            if (displayableTypes.includes(extension)) {
                 try {
                     const supabase = getSupabaseAdmin();
-                    // Ensure bucket exists (ignore errors if it already does)
                     await supabase.storage.createBucket('document-previews', { public: true }).catch(() => { });
 
-                    const path = `pdfs/${Date.now()}_${fileName}`;
+                    const path = `${extension}s/${Date.now()}_${fileName}`;
                     const { data: uploadData, error: uploadError } = await supabase.storage
                         .from('document-previews')
                         .upload(path, buffer, {
-                            contentType: 'application/pdf',
+                            contentType: this.getMimeType(extension),
                             upsert: true
                         });
 
                     if (uploadError) {
-                        console.warn('[Ingestion] PDF upload failed, continuing with text only:', uploadError);
+                        console.warn(`[Ingestion] ${extension} upload failed, continuing with text/metadata only:`, uploadError);
                     } else if (uploadData) {
                         const { data: { publicUrl } } = supabase.storage
                             .from('document-previews')
                             .getPublicUrl(path);
                         storageUrl = publicUrl;
-                        console.log(`[Ingestion] PDF stored at: ${storageUrl}`);
+                        console.log(`[Ingestion] File stored at: ${storageUrl}`);
                     }
                 } catch (storageErr) {
                     console.warn('[Ingestion] Storage logic failed:', storageErr);
@@ -116,7 +133,6 @@ export class IngestionService {
                 const openai = getOpenAIClient();
                 console.log(`[Ingestion] Generating embeddings for ${chunks.length} chunks...`);
 
-                // Process embeddings in smaller batches of 50 to avoid OpenAI or timeout limits
                 const batchSize = 50;
                 for (let i = 0; i < chunks.length; i += batchSize) {
                     const chunkBatch = chunks.slice(i, i + batchSize);
@@ -143,7 +159,8 @@ export class IngestionService {
                         ...classification,
                         source: fileName,
                         chunkIndex: i,
-                        fileUrl: storageUrl
+                        fileUrl: storageUrl,
+                        type: isMedia ? (['mp4', 'mov', 'wav', 'mp3'].includes(extension) ? 'Media' : 'Image') : classification.type
                     },
                     embedding: embeddings[i]
                 }));
@@ -283,5 +300,21 @@ Return ONLY valid JSON.`;
         }
 
         return chunks.filter(c => c.length > 0);
+    }
+
+    private static getMimeType(extension: string): string {
+        const mimes: Record<string, string> = {
+            'pdf': 'application/pdf',
+            'png': 'image/png',
+            'jpg': 'image/jpeg',
+            'jpeg': 'image/jpeg',
+            'gif': 'image/gif',
+            'webp': 'image/webp',
+            'mp4': 'video/mp4',
+            'wav': 'audio/wav',
+            'mov': 'video/quicktime',
+            'mp3': 'audio/mpeg'
+        };
+        return mimes[extension] || 'application/octet-stream';
     }
 }

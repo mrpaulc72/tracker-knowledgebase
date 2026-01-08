@@ -8,7 +8,8 @@ import { Input } from '@/components/ui/input';
 import {
     Loader2, Upload, CheckCircle2, AlertCircle, FileText,
     Tags, Info, X, FolderOpen, FileCode, Check, Trash2,
-    FileDigit, FileJson, Clock, Database, Link as LinkIcon, ExternalLink, Video
+    FileDigit, FileJson, Clock, Database, Link as LinkIcon, ExternalLink, Video,
+    Image, Music, FileSpreadsheet
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -198,11 +199,15 @@ export default function KnowledgeFactory() {
     }, []);
 
     const getFileIcon = (fileName: string) => {
-        const ext = fileName.split('.').pop()?.toLowerCase();
+        const ext = fileName.split('.').pop()?.toLowerCase() || '';
         if (ext === 'docx') return <FileText className="w-5 h-5 text-blue-600" />;
         if (ext === 'pdf') return <FileDigit className="w-5 h-5 text-red-600" />;
         if (ext === 'json') return <FileJson className="w-5 h-5 text-orange-500" />;
-        if (['ts', 'js', 'tsx', 'jsx', 'html', 'css'].includes(ext || '')) return <FileCode className="w-5 h-5 text-tracker-blue" />;
+        if (['xlsx', 'xls', 'csv'].includes(ext)) return <FileSpreadsheet className="w-5 h-5 text-green-600" />;
+        if (['png', 'jpg', 'jpeg', 'gif', 'webp'].includes(ext)) return <Image className="w-5 h-5 text-purple-500" />;
+        if (['mp4', 'mov'].includes(ext)) return <Video className="w-5 h-5 text-indigo-500" />;
+        if (['wav', 'mp3'].includes(ext)) return <Music className="w-5 h-5 text-pink-500" />;
+        if (['ts', 'js', 'tsx', 'jsx', 'html', 'css'].includes(ext)) return <FileCode className="w-5 h-5 text-tracker-blue" />;
         return <FileText className="w-5 h-5 text-zinc-400" />;
     };
 
@@ -524,7 +529,15 @@ export default function KnowledgeFactory() {
                                 {library.map((doc, idx) => (
                                     <div key={idx} className="bg-white p-3 flex items-center gap-3 hover:bg-zinc-50 transition-colors">
                                         <div className="p-2 rounded-lg bg-zinc-100 text-zinc-400">
-                                            {doc.fileUrl ? <FileText className="w-4 h-4 text-blue-600" /> : doc.url ? <Video className="w-4 h-4 text-purple-600" /> : <CheckCircle2 className="w-4 h-4" />}
+                                            {(() => {
+                                                const ext = doc.source.split('.').pop()?.toLowerCase() || '';
+                                                if (doc.type === 'Video Reference' || ['mp4', 'mov'].includes(ext)) return <Video className="w-4 h-4 text-purple-600" />;
+                                                if (['wav', 'mp3'].includes(ext)) return <Music className="w-4 h-4 text-pink-600" />;
+                                                if (['png', 'jpg', 'jpeg', 'gif', 'webp'].includes(ext)) return <Image className="w-4 h-4 text-indigo-600" />;
+                                                if (['xlsx', 'xls', 'csv'].includes(ext)) return <FileSpreadsheet className="w-4 h-4 text-green-600" />;
+                                                if (ext === 'pdf') return <FileText className="w-4 h-4 text-blue-600" />;
+                                                return <CheckCircle2 className="w-4 h-4" />;
+                                            })()}
                                         </div>
                                         <div className="flex-1 min-w-0">
                                             <div className="flex items-center gap-2">
