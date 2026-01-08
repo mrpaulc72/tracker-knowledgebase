@@ -81,12 +81,12 @@ export default function OpsManual() {
                 .select('*');
 
             if (error) throw error;
-            
+
             // Filter for type === 'sop' or 'SOP'
-            const sopData = (data || []).filter((doc: any) => 
+            const sopData = (data || []).filter((doc: any) =>
                 doc.metadata?.type?.toLowerCase() === 'sop'
             );
-            
+
             setSops(sopData);
 
             // Select first SOP by default if available
@@ -204,10 +204,23 @@ export default function OpsManual() {
                 {selectedSop ? (
                     <div className="p-8 max-w-3xl mx-auto">
                         <div className="mb-6 pb-6 border-b border-zinc-100">
-                            <div className="flex items-center gap-2 text-xs text-zinc-400 mb-2">
-                                <span>{selectedSop.metadata.category || 'General'}</span>
-                                <ChevronRight className="w-3 h-3" />
-                                <span>Last updated today</span>
+                            <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center gap-2 text-xs text-zinc-400">
+                                    <span>{selectedSop.metadata.category || 'General'}</span>
+                                    <ChevronRight className="w-3 h-3" />
+                                    <span>Last updated today</span>
+                                </div>
+                                {selectedSop.metadata.fileUrl && (
+                                    <a
+                                        href={selectedSop.metadata.fileUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[10px] flex items-center gap-1 text-tracker-blue hover:underline font-bold bg-tracker-blue/5 px-2 py-1 rounded"
+                                    >
+                                        VIEW ORIGINAL PDF
+                                        <PlusCircle className="w-2 h-2 rotate-45" />
+                                    </a>
+                                )}
                             </div>
                             <h1 className="text-3xl font-bold text-tracker-navy tracking-tight">
                                 {selectedSop.metadata.title}

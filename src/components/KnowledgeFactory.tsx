@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import {
     Loader2, Upload, CheckCircle2, AlertCircle, FileText,
     Tags, Info, X, FolderOpen, FileCode, Check, Trash2,
-    FileDigit, FileJson, Clock, Database
+    FileDigit, FileJson, Clock, Database, Link as LinkIcon, ExternalLink, Video
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -108,7 +108,7 @@ export default function KnowledgeFactory() {
                 } else {
                     // If not JSON, it's likely an HTML error page (timeout, 413, 500)
                     const text = await response.text();
-                    console.error('Non-JSON response:', text.slice(0, 500)); 
+                    console.error('Non-JSON response:', text.slice(0, 500));
                     const statusText = response.status === 504 ? 'Gateway Timeout' : `Status ${response.status}`;
                     throw new Error(`Server Error (${statusText}): The file processing failed at the infrastructure level. Check Netlify logs.`);
                 }
@@ -117,11 +117,21 @@ export default function KnowledgeFactory() {
                     throw new Error(data.error || data.details || 'Ingestion failed');
                 }
 
-                setQueue(prev => prev.map(f => f.id === queuedFile.id ? {
-                    ...f,
-                    status: 'success',
-                    classification: data.classification
-                } : f));
+                if (data.error === 'ALREADY_EXISTS') {
+                    setQueue(prev => prev.map(f => f.id === queuedFile.id ? {
+                        ...f,
+                        status: 'success',
+                        error: 'Skipped (Already exists in library)'
+                    } : f));
+                } else {
+                    setQueue(prev => prev.map(f => f.id === queuedFile.id ? {
+                        ...f,
+                        status: 'success',
+                        classification: data.classification
+                    } : f));
+                    // Refresh library after successful ingestion
+                    fetchLibrary();
+                }
             } catch (err: any) {
                 console.error(`Error ingesting ${queuedFile.file.name}:`, err);
                 setQueue(prev => prev.map(f => f.id === queuedFile.id ? {
@@ -134,6 +144,57 @@ export default function KnowledgeFactory() {
 
         setIsIngesting(false);
     };
+
+    const [library, setLibrary] = useState<any[]>([]);
+    const [isLoadingLibrary, setIsLoadingLibrary] = useState(false);
+    const [isAddingLink, setIsAddingLink] = useState(false);
+    const [linkData, setLinkData] = useState({ title: '', summary: '', url: '' });
+
+    const fetchLibrary = async () => {
+        setIsLoadingLibrary(true);
+        try {
+            const res = await fetch('/api/documents');
+            const data = await res.json();
+            if (data.sources) {
+                setLibrary(data.sources);
+            }
+        } catch (err) {
+            console.error('Failed to fetch library:', err);
+        } finally {
+            setIsLoadingLibrary(false);
+        }
+    };
+
+    const handleAddLink = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsIngesting(true);
+        try {
+            const res = await fetch('/api/ingest/link', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(linkData),
+            });
+            const data = await res.json();
+
+            if (data.error === 'ALREADY_EXISTS') {
+                alert('A reference with this title already exists.');
+            } else if (res.ok) {
+                setLinkData({ title: '', summary: '', url: '' });
+                setIsAddingLink(false);
+                fetchLibrary();
+            } else {
+                throw new Error(data.error || 'Failed to add link');
+            }
+        } catch (err: any) {
+            alert(`Error: ${err.message}`);
+        } finally {
+            setIsIngesting(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchLibrary();
+    }, []);
 
     const getFileIcon = (fileName: string) => {
         const ext = fileName.split('.').pop()?.toLowerCase();
@@ -164,23 +225,78 @@ export default function KnowledgeFactory() {
                                 </CardDescription>
                             </div>
                         </div>
-                        {queue.length > 0 && (
+                        <div className="flex items-center gap-2">
                             <Button
-                                variant="ghost"
+                                variant="outline"
                                 size="sm"
-                                onClick={clearQueue}
-                                disabled={isIngesting}
-                                className="text-zinc-500 hover:text-destructive gap-2 font-bold uppercase text-[10px] tracking-widest"
+                                onClick={() => setIsAddingLink(!isAddingLink)}
+                                className={`text-[10px] font-bold h-8 border-tracker-navy/20 ${isAddingLink ? 'bg-tracker-navy text-white' : ''}`}
                             >
-                                <Trash2 className="w-3 h-3" />
-                                Clear Queue
+                                <LinkIcon className="w-3 h-3 mr-2" />
+                                {isAddingLink ? 'BACK TO UPLOAD' : 'ADD VIDEO/LINK'}
                             </Button>
-                        )}
+                            {queue.length > 0 && (
+                                <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    onClick={clearQueue}
+                                    disabled={isIngesting}
+                                    className="text-zinc-500 hover:text-destructive gap-2 font-bold uppercase text-[10px] tracking-widest"
+                                >
+                                    <Trash2 className="w-3 h-3" />
+                                    Clear Queue
+                                </Button>
+                            )}
+                        </div>
                     </div>
                 </CardHeader>
 
                 <CardContent className="p-0 flex flex-col flex-1">
-                    {queue.length === 0 ? (
+                    {isAddingLink ? (
+                        <div className="p-12">
+                            <form onSubmit={handleAddLink} className="space-y-4 max-w-md mx-auto py-4">
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-bold uppercase text-zinc-500">Video/Reference Title</label>
+                                    <Input
+                                        className="h-10 border-tracker-navy/10"
+                                        placeholder="e.g. How to Research for LinkedIn Posts"
+                                        value={linkData.title}
+                                        onChange={e => setLinkData(prev => ({ ...prev, title: e.target.value }))}
+                                        required
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-bold uppercase text-zinc-500">Loom/External URL</label>
+                                    <Input
+                                        className="h-10 border-tracker-navy/10"
+                                        placeholder="https://www.loom.com/share/..."
+                                        value={linkData.url}
+                                        onChange={e => setLinkData(prev => ({ ...prev, url: e.target.value }))}
+                                        type="url"
+                                        required
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-bold uppercase text-zinc-500">Brief Summary (for AI Search)</label>
+                                    <textarea
+                                        className="w-full min-h-[100px] p-3 rounded-md border border-tracker-navy/10 text-sm focus:outline-none focus:ring-1 focus:ring-tracker-navy bg-white"
+                                        placeholder="Briefly describe what happens in this video..."
+                                        value={linkData.summary}
+                                        onChange={e => setLinkData(prev => ({ ...prev, summary: e.target.value }))}
+                                        required
+                                    />
+                                </div>
+                                <Button
+                                    className="w-full bg-tracker-navy text-white hover:bg-tracker-navy/90"
+                                    disabled={isIngesting}
+                                    type="submit"
+                                >
+                                    {isIngesting ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <Database className="w-4 h-4 mr-2" />}
+                                    Index Video Reference
+                                </Button>
+                            </form>
+                        </div>
+                    ) : queue.length === 0 ? (
                         <div className="flex-1 flex flex-col items-center justify-center p-12 space-y-6">
                             <div
                                 onDragOver={(e) => e.preventDefault()}
@@ -268,7 +384,17 @@ export default function KnowledgeFactory() {
                                                 {item.status === 'processing' && (
                                                     <p className="text-[10px] text-tracker-blue animate-pulse font-medium">Classifying and Embedding...</p>
                                                 )}
-                                                {item.status === 'success' && item.classification && (
+                                                {item.status === 'success' && item.error?.includes('Already exists') && (
+                                                    <div className="flex items-center gap-2 mt-1">
+                                                        <Badge variant="outline" className="text-[9px] h-4 bg-tracker-gold/10 text-tracker-gold border-none">
+                                                            SKIPPED
+                                                        </Badge>
+                                                        <p className="text-[10px] text-tracker-gold font-medium">
+                                                            {item.error}
+                                                        </p>
+                                                    </div>
+                                                )}
+                                                {item.status === 'success' && !item.error && item.classification && (
                                                     <div className="flex items-center gap-2 mt-1">
                                                         <Badge variant="outline" className="text-[9px] h-4 bg-tracker-navy/5 text-tracker-navy border-none">
                                                             {item.classification.type}
@@ -358,6 +484,75 @@ export default function KnowledgeFactory() {
                         </Button>
                     </div>
                 </CardFooter>
+            </Card>
+
+            {/* Managed Library Section */}
+            <Card className="border-tracker-navy/10 shadow-lg overflow-hidden flex flex-col">
+                <CardHeader className="bg-zinc-50 border-b border-tracker-navy/5">
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                            <Database className="w-5 h-5 text-tracker-navy" />
+                            <div>
+                                <CardTitle className="text-lg font-bold text-tracker-navy">In-Storage Library</CardTitle>
+                                <CardDescription className="text-[10px]">
+                                    {library.length} documents currently indexed and available for RAG.
+                                </CardDescription>
+                            </div>
+                        </div>
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={fetchLibrary}
+                            disabled={isLoadingLibrary}
+                            className="h-8 text-[10px] font-bold uppercase tracking-widest text-zinc-500"
+                        >
+                            {isLoadingLibrary ? <Loader2 className="w-3 h-3 animate-spin mr-2" /> : <Clock className="w-3 h-3 mr-2" />}
+                            Refresh
+                        </Button>
+                    </div>
+                </CardHeader>
+                <CardContent className="p-0 max-h-[400px]">
+                    <ScrollArea className="h-full">
+                        {library.length === 0 ? (
+                            <div className="p-12 text-center text-zinc-400">
+                                <p className="text-sm">No documents found in storage.</p>
+                                <p className="text-xs mt-1">Upload files above to populate the library.</p>
+                            </div>
+                        ) : (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-100">
+                                {library.map((doc, idx) => (
+                                    <div key={idx} className="bg-white p-3 flex items-center gap-3 hover:bg-zinc-50 transition-colors">
+                                        <div className="p-2 rounded-lg bg-zinc-100 text-zinc-400">
+                                            {doc.fileUrl ? <FileText className="w-4 h-4 text-blue-600" /> : doc.url ? <MonitorPlay className="w-4 h-4 text-purple-600" /> : <CheckCircle2 className="w-4 h-4" />}
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            <div className="flex items-center gap-2">
+                                                <p className="text-[11px] font-bold text-tracker-navy truncate">{doc.source}</p>
+                                                <Badge variant="outline" className="text-[8px] h-3 px-1 bg-zinc-50 border-none uppercase text-zinc-400 font-black">
+                                                    {doc.type}
+                                                </Badge>
+                                            </div>
+                                            <p className="text-[9px] text-zinc-400">Status: Indexed & Searchable</p>
+                                        </div>
+                                        {(doc.fileUrl || doc.url) && (
+                                            <Button
+                                                variant="ghost"
+                                                size="sm"
+                                                asChild
+                                                className="h-7 text-[9px] font-bold text-tracker-navy hover:bg-tracker-navy/5"
+                                            >
+                                                <a href={doc.fileUrl || doc.url} target="_blank" rel="noopener noreferrer">
+                                                    {doc.fileUrl ? 'VIEW PDF' : 'WATCH'}
+                                                    <ExternalLink className="w-2 h-2 ml-1" />
+                                                </a>
+                                            </Button>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </ScrollArea>
+                </CardContent>
             </Card>
         </div>
     );

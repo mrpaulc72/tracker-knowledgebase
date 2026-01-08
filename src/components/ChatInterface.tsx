@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
-import { Search, Send, Bot, User, Loader2, BookOpen, ShieldCheck, Zap } from 'lucide-react';
+import { Search, Send, Bot, User, Loader2, BookOpen, ShieldCheck, Zap, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -14,7 +14,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 interface Message {
     role: 'user' | 'assistant';
     content: string;
-    sources?: string[];
+    sources?: {
+        name: string;
+        fileUrl?: string;
+        url?: string;
+    }[];
 }
 
 const MODELS = [
@@ -25,7 +29,7 @@ const MODELS = [
 ];
 
 const QUICK_ACTIONS = [
-// ... (keep the same)
+    // ... (keep the same)
     {
         label: "SAFE Core Capabilities",
         question: "What are the core capabilities of the SAFE platform?",
@@ -113,7 +117,7 @@ export default function ChatInterface() {
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
+                body: JSON.stringify({
                     messages: [...messages, userMessage],
                     model: selectedModel
                 }),
@@ -128,9 +132,9 @@ export default function ChatInterface() {
             setMessages((prev) => [...prev, { role: 'assistant', content: data.content, sources: data.sources }]);
         } catch (error: any) {
             console.error('Chat error:', error);
-            setMessages((prev) => [...prev, { 
-                role: 'assistant', 
-                content: `Error: ${error.message || 'I encountered an error. Please check your connection and environment variables.'}` 
+            setMessages((prev) => [...prev, {
+                role: 'assistant',
+                content: `Error: ${error.message || 'I encountered an error. Please check your connection and environment variables.'}`
             }]);
         } finally {
             setIsLoading(false);
@@ -228,11 +232,29 @@ export default function ChatInterface() {
                                 </div>
 
                                 {m.sources && m.sources.length > 0 && (
-                                    <div className="flex flex-wrap gap-1 mt-1">
-                                        {Array.from(new Set(m.sources)).map((s, si) => (
-                                            <Badge key={si} variant="outline" className="text-[10px] py-0 h-5 bg-tracker-blue/5 text-tracker-blue border-tracker-blue/20">
-                                                {s}
-                                            </Badge>
+                                    <div className="flex flex-wrap gap-2 mt-2">
+                                        {/* Filter unique sources by name */}
+                                        {m.sources.filter((s, idx, self) =>
+                                            idx === self.findIndex((t) => t.name === s.name)
+                                        ).map((s, si) => (
+                                            <div key={si} className="flex items-center gap-1 group">
+                                                <Badge variant="outline" className="text-[10px] py-1 h-6 bg-tracker-blue/5 text-tracker-blue border-tracker-blue/20">
+                                                    {s.name}
+                                                </Badge>
+                                                {(s.fileUrl || s.url) && (
+                                                    <Button
+                                                        variant="ghost"
+                                                        size="sm"
+                                                        asChild
+                                                        className="h-6 px-2 text-[9px] font-bold text-tracker-navy bg-white border border-tracker-navy/10 hover:bg-tracker-navy/5 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                                                    >
+                                                        <a href={s.fileUrl || s.url} target="_blank" rel="noopener noreferrer">
+                                                            {s.fileUrl ? 'VIEW PDF' : 'WATCH'}
+                                                            <ExternalLink className="w-2 h-2 ml-1" />
+                                                        </a>
+                                                    </Button>
+                                                )}
+                                            </div>
                                         ))}
                                     </div>
                                 )}

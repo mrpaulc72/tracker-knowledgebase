@@ -77,7 +77,11 @@ ${contextText}`;
 
         return NextResponse.json({
             content,
-            sources: documents?.map((doc: any) => doc.metadata.source) || []
+            sources: documents?.map((doc: any) => ({
+                name: doc.metadata.source,
+                fileUrl: doc.metadata.fileUrl,
+                url: doc.metadata.url
+            })) || []
         });
 
     } catch (error: any) {

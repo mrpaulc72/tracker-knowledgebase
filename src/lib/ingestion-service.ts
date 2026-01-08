@@ -10,12 +10,26 @@ export interface IngestionResult {
 }
 
 export class IngestionService {
-    /**
-     * Automatically ingests, classifies, and embeds a document from a Buffer.
-     */
     static async ingestDocument(buffer: Buffer, fileName: string): Promise<IngestionResult> {
         try {
             console.log(`[Ingestion] Starting: ${fileName} (${buffer.length} bytes)`);
+
+            // Check for existing document by source name to prevent duplicates
+            const supabase = getSupabaseAdmin();
+            const { data: existingDocs } = await supabase
+                .from('documents')
+                .select('id')
+                .eq('metadata->>source', fileName)
+                .limit(1);
+
+            if (existingDocs && existingDocs.length > 0) {
+                console.log(`[Ingestion] Skipping duplicate: ${fileName}`);
+                return {
+                    success: true,
+                    error: 'ALREADY_EXISTS',
+                    chunksCount: 0
+                };
+            }
 
             const extension = fileName.split('.').pop()?.toLowerCase();
             let text = '';
@@ -54,9 +68,37 @@ export class IngestionService {
                 throw new Error('Document appears to be empty or could not be read.');
             }
 
-            console.log(`[Ingestion] Extracted ${text.length} characters.`);
+            // 1. Upload to Supabase Storage if it's a PDF for high-fidelity viewing
+            let storageUrl = undefined;
+            if (extension === 'pdf') {
+                try {
+                    const supabase = getSupabaseAdmin();
+                    // Ensure bucket exists (ignore errors if it already does)
+                    await supabase.storage.createBucket('document-previews', { public: true }).catch(() => { });
 
-            // 1. Classify
+                    const path = `pdfs/${Date.now()}_${fileName}`;
+                    const { data: uploadData, error: uploadError } = await supabase.storage
+                        .from('document-previews')
+                        .upload(path, buffer, {
+                            contentType: 'application/pdf',
+                            upsert: true
+                        });
+
+                    if (uploadError) {
+                        console.warn('[Ingestion] PDF upload failed, continuing with text only:', uploadError);
+                    } else if (uploadData) {
+                        const { data: { publicUrl } } = supabase.storage
+                            .from('document-previews')
+                            .getPublicUrl(path);
+                        storageUrl = publicUrl;
+                        console.log(`[Ingestion] PDF stored at: ${storageUrl}`);
+                    }
+                } catch (storageErr) {
+                    console.warn('[Ingestion] Storage logic failed:', storageErr);
+                }
+            }
+
+            // 1b. Classify
             const classification = await this.classifyDocument(text, fileName);
             console.log(`[Ingestion] Classified: ${classification.type}`);
 
@@ -73,7 +115,7 @@ export class IngestionService {
             try {
                 const openai = getOpenAIClient();
                 console.log(`[Ingestion] Generating embeddings for ${chunks.length} chunks...`);
-                
+
                 // Process embeddings in smaller batches of 50 to avoid OpenAI or timeout limits
                 const batchSize = 50;
                 for (let i = 0; i < chunks.length; i += batchSize) {
@@ -100,7 +142,8 @@ export class IngestionService {
                     metadata: {
                         ...classification,
                         source: fileName,
-                        chunkIndex: i
+                        chunkIndex: i,
+                        fileUrl: storageUrl
                     },
                     embedding: embeddings[i]
                 }));
@@ -108,7 +151,7 @@ export class IngestionService {
                 const { error: insertError } = await supabase.from('documents').insert(rows);
 
                 if (insertError) throw insertError;
-                
+
                 console.log(`[Ingestion] Success! Stored ${chunks.length} chunks for ${fileName}.`);
                 return { success: true, chunksCount: chunks.length, classification };
             } catch (dbError: any) {
@@ -118,6 +161,56 @@ export class IngestionService {
 
         } catch (error: any) {
             console.error('[Ingestion] Critical Failure:', error);
+            return { success: false, error: error.message };
+        }
+    }
+
+    /**
+     * Ingests an external link (like Loom) with a summary.
+     */
+    static async ingestLink(title: string, summary: string, url: string): Promise<IngestionResult> {
+        try {
+            console.log(`[Ingestion] Starting Link: ${title} (${url})`);
+
+            // Check for existing link title
+            const supabase = getSupabaseAdmin();
+            const { data: existing } = await supabase
+                .from('documents')
+                .select('id')
+                .eq('metadata->>source', title)
+                .limit(1);
+
+            if (existing && existing.length > 0) {
+                return { success: true, error: 'ALREADY_EXISTS', chunksCount: 0 };
+            }
+
+            // 1. Generate Embedding for the summary
+            const openai = getOpenAIClient();
+            const embeddingResponse = await openai.embeddings.create({
+                model: 'text-embedding-3-small',
+                input: summary.replace(/\n/g, ' '),
+            });
+            const embedding = embeddingResponse.data[0].embedding;
+
+            // 2. Store
+            const { error: insertError } = await supabase.from('documents').insert({
+                content: summary,
+                metadata: {
+                    type: 'Video Reference',
+                    source: title,
+                    url: url,
+                    summary: summary,
+                    tags: ['Video', 'Loom', 'Instructional'],
+                    priority: 2
+                },
+                embedding
+            });
+
+            if (insertError) throw insertError;
+
+            return { success: true, chunksCount: 1 };
+        } catch (error: any) {
+            console.error('[Ingestion] Link Failure:', error);
             return { success: false, error: error.message };
         }
     }
