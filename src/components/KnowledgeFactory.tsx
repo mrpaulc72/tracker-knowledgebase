@@ -512,8 +512,8 @@ export default function KnowledgeFactory() {
                         </Button>
                     </div>
                 </CardHeader>
-                <CardContent className="p-0 max-h-[400px]">
-                    <ScrollArea className="h-full">
+                <CardContent className="p-0">
+                    <ScrollArea className="h-[500px] w-full">
                         {library.length === 0 ? (
                             <div className="p-12 text-center text-zinc-400">
                                 <p className="text-sm">No documents found in storage.</p>
