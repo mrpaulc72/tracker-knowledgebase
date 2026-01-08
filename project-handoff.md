@@ -41,10 +41,13 @@ The site is deployed at: `https://tracker-knowledgebase.netlify.app`
 - [x] Add **"Deep Search"** (Semantic Search) to the Ops Manual sidebar (Completed via multi-modal chat).
 - [x] Implement batch folder ingestion for the Knowledge Factory.
 
+## 7. Change Stacking & Push Policy
+> [!IMPORTANT]
+> To conserve Netlify deployment credits, **do not push to GitHub for every small change**. 
+> Stacking changes locally and pushing only after major milestones or explicit requests is the preferred workflow.
+
 ---
-**Handoff Complete.** Current Version: v1.0.8
-
-
-
-
-
+**Handoff Update: v1.1.0**
+- **Omnibus Support**: 100+ file extensions (Documents, Data, Media, CAD, Creative).
+- **Robust PDF Strategy**: Soft-failure model that treats non-extractable PDFs as reference assets instead of throwing errors.
+- **Visual Overhaul**: Context-aware UI icons and action buttons (WATCH, VIEW, OPEN).

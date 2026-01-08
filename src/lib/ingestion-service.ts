@@ -81,8 +81,10 @@ export class IngestionService {
                 } else if (extension === 'pdf') {
                     console.log(`[Ingestion] Extracting PDF...`);
                     try {
-                        // Correct pdf-parse usage: it's a default export function
-                        const pdf = (await import('pdf-parse')).default;
+                        // Correct pdf-parse usage: handle both ESM and CJS shapes
+                        const pdfModule = await import('pdf-parse');
+                        const pdf = (pdfModule as any).default || pdfModule;
+
                         const pdfResult = await pdf(buffer);
                         text = pdfResult.text;
 
