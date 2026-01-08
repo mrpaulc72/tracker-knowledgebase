@@ -524,7 +524,7 @@ export default function KnowledgeFactory() {
                                 {library.map((doc, idx) => (
                                     <div key={idx} className="bg-white p-3 flex items-center gap-3 hover:bg-zinc-50 transition-colors">
                                         <div className="p-2 rounded-lg bg-zinc-100 text-zinc-400">
-                                            {doc.fileUrl ? <FileText className="w-4 h-4 text-blue-600" /> : doc.url ? <MonitorPlay className="w-4 h-4 text-purple-600" /> : <CheckCircle2 className="w-4 h-4" />}
+                                            {doc.fileUrl ? <FileText className="w-4 h-4 text-blue-600" /> : doc.url ? <Video className="w-4 h-4 text-purple-600" /> : <CheckCircle2 className="w-4 h-4" />}
                                         </div>
                                         <div className="flex-1 min-w-0">
                                             <div className="flex items-center gap-2">
